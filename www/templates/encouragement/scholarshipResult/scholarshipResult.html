@@ -1,0 +1,17 @@
+<ion-view view-title="장학 신청 결과(학부)" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <a class="button button-clear" href="#/app/encouragement" nav-clear><i class="icon ion-ios-arrow-left"></i></a>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div class="row" ng-repeat="Result in scholarshipResult">
+      <div class="col"> {{Result.year}} </div>
+      <div class="col"> {{Result.semester}} </div>
+      <div class="col"> {{Result.date}} </div>
+      <div class="col"> {{Result.type}} </div>
+      <div class="col"> {{Result.reason}} </div>
+      <div class="col"> {{Result.result}} </div>
+    </div>
+  </ion-content>
+</ion-view>

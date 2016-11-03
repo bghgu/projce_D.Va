@@ -1,0 +1,29 @@
+<ion-view view-title="나의 수업 출결 현황" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <a class="button button-clear" href="#/app/myPage" nav-clear><i class="icon ion-ios-arrow-left"></i></a>
+  </ion-nav-buttons>
+
+  <ion-content>
+
+    <div class="row">
+      <div class="col col-50"> 과목 </div>
+      <div class="col" style="FONT-WEIGHT: bold;"> 출석 </div>
+      <div class="col"> 지각 </div>
+      <div class="col"> 결석 </div>
+      <div class="col"> 공결 </div>
+      <div class="col"> 생공 </div>
+      <div class="col"> 조퇴 </div>
+    </div>
+    <!-- json 값 출력-->
+    <div class="row" ng-repeat="attendance in attendance">
+      <div class="col col-50"> {{attendance.subject}} </div>
+      <div class="col" style="FONT-WEIGHT: bold;"> {{attendance.attend}} </div>
+      <div class="col"> {{attendance.late}} </div>
+      <div class="col"> {{attendance.absence}} </div>
+      <div class="col"> {{attendance.approved}} </div>
+      <div class="col"> {{attendance.menstrual}} </div>
+      <div class="col"> {{attendance.early}} </div>
+    </div>
+  </ion-content>
+</ion-view>

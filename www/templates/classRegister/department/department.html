@@ -1,0 +1,146 @@
+<ion-view view-title="학과별 개설 과목 조회" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <a class="button button-clear" href="#/app/classRegister" nav-clear><i class="icon ion-ios-arrow-left"></i></a>
+  </ion-nav-buttons>
+
+  <ion-content class="padding">
+    <div class="row responsive-sm padding remvoeBP">
+      <div class="col">
+  		  <div class="list list-inset removePM">
+
+          <div class="list">
+
+            <label class="item item-input item-select">
+              <div class="input-label"> 연도 </div>
+                <select ng-model="data.year">
+                  <option value="2016"> 2017 </option>
+                  <option value="2016"> 2016 </option>
+                  <option value="2015"> 2015 </option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+              <div class="input-label"> 학기 </div>
+                <select ng-model="data.semester">
+                  <option value="Z0101"> 1학기 </option>
+                  <option value="Z0102"> 2학기 </option>
+                  <option value="Z0103"> 여름학기 </option>
+                  <option value="Z0104"> 겨울학기 </option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+              <div class="input-label"> 학부(과) </div>
+                <select ng-model="data.depart">
+                  <option value="U050000_U050300_U050300">공학계 소프트웨어공학과</option>
+                  <option value="U010000_U010000_U010000">교양계</option>
+                  <option value="U010000_U010110_U010110">교양계 교양학부</option>
+                  <option value="U010000_U010120_U010120">교양계 교양필수</option>
+                  <option value="U010000_U010130_U010130">교양계 교양인문</option>
+                  <option value="U010000_U010140_U010140">교양계 교양사회</option>
+                  <option value="U010000_U010150_U010150">교양계 교양자연</option>
+                  <option value="U010000_U010160_U010160">교양계 교양선택</option>
+                  <option value="U010000_U010180_U010180">교양계 늘푸른복지관</option>
+                  <option value="U010000_U010181_U010181">교양계 사회봉사센터</option>
+                  <option value="U010000_U010210_U010210">교양계 상담실</option>
+                  <option value="U011000_U011000_U011000">교직계</option>
+                  <option value="U011000_U011110_U011110">교직계 교직</option>
+                  <option value="U011150_U011150_U011150">평생교육</option>
+                  <option value="U011150_U011160_U011160">평생교육 평교</option>
+                  <option value="U012000_U012000_U012000">해외창</option>
+                  <option value="U012000_U012110_U012110">해외창 해외교육</option>
+                  <option value="U012000_U012120_U012120">해외창 중국창</option>
+                  <option value="U013100_U013100_U013100">교환학생</option>
+                  <option value="U013100_U013110_U013110">교환학생 일본</option>
+                  <option value="U014000_U014000_U014000">가상계</option>
+                  <option value="U014000_U014100_U014100">가상계 문회기획학</option>
+                  <option value="U014000_U014200_U014200">가상계 비정부기구학</option>
+                  <option value="U020000_U020000_U020000">인문계</option>
+                  <option value="U020000_U020200_U020200">인문계 신학과</option>
+                  <option value="U020000_U020300_U020300">인문계 영어학과</option>
+                  <option value="U020000_U020400_U020400">인문계 일어일본학과</option>
+                  <option value="U020000_U020500_U020500">인문계 중어중국학과</option>
+                  <option value="U030000_U030000_U030000">사회계</option>
+                  <option value="U030000_U030100_U030100">사회계 사회복지학과</option>
+                  <option value="U030000_U030200_U030200">사회계 사회과학부</option>
+                  <option value="U030000_U030200_U030201">사회계 사회과학부 정치학전공</option>
+                  <option value="U030000_U030200_U030202">사회계 사회과학부 경제학전공</option>
+                  <option value="U030000_U030200_U030203">사회계 사회과학부 사회학전공</option>
+                  <option value="U030000_U030300_U030300">사회계 신문방송학과</option>
+                  <option value="U030000_U030700_U030700">사회계 경영학부</option>
+                  <option value="U030000_U030700_U030701">사회계 경영학부 유통정보학전공</option>
+                  <option value="U030000_U030800_U030800">사회계 디지털컨텐츠학과</option>
+                  <option value="U040000_U040000_U040000">자연계</option>
+                  <option value="U040000_U040500_U040500">자연계 디지털컨텐츠학과</option>
+                  <option value="U050000_U050000_U050000">공학계</option>
+                  <option value="U050000_U050300_U050300">공학계 소프트웨어공학과</option>
+                  <option value="U050000_U050400_U050400">공학계 정보통신공학과</option>
+                  <option value="U050000_U050500_U050500">공학계 글로컬IT학과</option>
+                  <option value="U050000_U050600_U050600">공학계 컴퓨터공학과</option>
+                  <option value="U001000_U001000_U001000">교류대학(학부)</option>
+                  <option value="U001000_U001100_U001100">교류대학(학부) 가톨릭대(학부)</option>
+                  <option value="U001000_U001200_U001200">교류대학(학부) 한신대(학부)</option>
+                </select>
+            </label>
+
+            <label class="item item-input">
+              <input type="search" ng-model="data.professor" placeholder="교수명" >
+            </label>
+          </div>
+  	    </div>
+        <div class="submit"><button class="button button-block button-balanced" ng-click="department(data);" > 검색 </button>  </div>
+      </div>
+    </div>
+
+    <div class="list">
+      <i class="item" ng-repeat="depart in departments">
+        <div class="row">
+          <a class="col" style="FONT-WEIGHT: bold;"> {{depart.subject}} </a>
+        </div>
+        <div class="row">
+          <div class="col" style="FONT-WEIGHT: bold;"> 구분 </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> {{depart.type}} </div>
+        </div>
+        <div class="row">
+          <div class="col" style="FONT-WEIGHT: bold;"> 학점 </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> {{depart.credits}} </div>
+        </div>
+        <div class="row">
+          <div class="col" style="FONT-WEIGHT: bold;"> 신청/정원 </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> {{depart.headcounts}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> 분반 </div>
+          <div class="col"> {{depart.class}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> 학년 </div>
+          <div class="col"> {{depart.grade}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> 교수 </div>
+          <div class="col"> {{depart.tutor}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> 학과제한 </div>
+          <div class="col"> {{depart.depart_restriction}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> 학년제한 </div>
+          <div class="col"> {{depart.grade_restriction}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> 장소/시간 </div>
+        </div>
+        <div class="row">
+          <p class="col"> {{depart.time_location}} </p>
+        </div>
+        <div class="row">
+          <div class="col"> 확인사항 </div>
+          <div class="col"> {{depart.note}} </div>
+        </div>
+      </i>
+    </div>
+  </ion-content>
+</ion-view>

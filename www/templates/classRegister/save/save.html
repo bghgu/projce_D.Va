@@ -1,0 +1,81 @@
+<ion-view view-title="학점 세이브 조회" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <a class="button button-clear" href="#/app/classRegister" nav-clear><i class="icon ion-ios-arrow-left"></i></a>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div class="list">
+      <i class="item">
+        <div class="col"> 학점 세이브 현황 </div>
+        <div class="row">
+          <div class="col"> 누적학점 </div>
+          <div class="col"> {{save.accrued}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> 누적기준 </div>
+          <div class="col"> {{save.accrued_criteria}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> 사용학점 </div>
+          <div class="col"> {{save.used}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> 사용기준 </div>
+          <div class="col"> {{save.used_criteria}} </div>
+        </div>
+        <div class="row">
+          <div class="col" style="FONT-WEIGHT: bold;"> 사용가능학점 </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> {{save.available}} </div>
+        </div>
+      </i>
+    </div>
+    <!--
+    <div class="row">
+      <div class="col"> 누적학점 </div>
+      <div class="col"> 누적기준 </div>
+      <div class="col"> 사용학점 </div>
+      <div class="col"> 사용기준 </div>
+      <div class="col"> 사용가능학점 </div>
+    </div>
+    <div class="row">
+      <div class="col"> {{save.accrued}} </div>
+      <div class="col"> {{save.accrued_criteria}} </div>
+      <div class="col"> {{save.used}} </div>
+      <div class="col"> {{save.used_criteria}} </div>
+      <div class="col"> {{save.available}} </div>
+    </div>-->
+    
+    <div class="col"> 상세 내역 </div>
+    <div class="row">
+      <div class="col"> 연도 </div>
+      <div class="col"> 학기 </div>
+      <div class="col"> 세이브 학점 </div>
+      <div class="col"> 사용학점 </div>
+    </div>
+    <div class="row" ng-repeat="details in details">
+      <div class="col"> {{details.year}} </div>
+      <div class="col"> {{details.semester}} </div>
+      <div class="col"> {{details.used}} </div>
+      <div class="col"> {{details.available}} </div>
+    </div>
+    <!--
+    <div class="list">
+      <i class="item" ng-repeat="List in scholarshipList">
+        <div class="row">
+          <div class="col"> {{List.year}} </div>
+          <div class="col"> {{List.semester}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> {{List.scholarship_name}} </div>
+          <div class="col"> {{List.registration_scholarship}}원 </div>
+        </div>
+        <div class="row">
+          <div class="col"> {{List.order}} </div>
+          <div class="col"> {{List.benefit}} </div>
+        </div>
+      </i>
+    </div>
+    -->
+  </ion-content>
+</ion-view>

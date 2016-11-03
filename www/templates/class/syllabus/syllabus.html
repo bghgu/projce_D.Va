@@ -1,0 +1,89 @@
+<ion-view view-title="강의 계획서 조회" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <a class="button button-clear" href="#/app/class" nav-clear><i class="icon ion-ios-arrow-left"></i></a>
+  </ion-nav-buttons>
+
+  <ion-content class="padding">
+
+    <div class="row responsive-sm padding remvoeBP">
+      <div class="col">
+  		  <div class="list list-inset removePM">
+
+          <div class="list">
+            <!-- 선택 메뉴-->
+            <label class="item item-input item-select">
+              <div class="input-label"> 연도 </div>
+                <select ng-model="data.year">
+                  <option value="2016"> 2017 </option>
+                  <option value="2016"> 2016 </option>
+                  <option value="2015"> 2015 </option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+              <div class="input-label"> 학기 </div>
+                <select ng-model="data.semester">
+                  <option value="Z0101"> 1학기 </option>
+                  <option value="Z0102"> 2학기 </option>
+                  <option value="Z0103"> 여름학기 </option>
+                  <option value="Z0104"> 겨울학기 </option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+              <div class="input-label"> 구분 </div>
+                <select ng-model="data.type">
+                  <option value="GYOSU"> 교수명 </option>
+                  <option value="GWAMOG"> 과목명 </option>
+                  <option value="HagbuNm"> 학부(과)명 </option>
+                </select>
+            </label>
+
+            <label class="item item-input">
+              <input type="search" ng-model="data.keyword" placeholder="검색어" >
+            </label>
+          </div>
+  	    </div>
+        <!--angular js -->
+        <div class="submit"><button class="button button-block button-balanced" ng-click="syllabus(data);" > 검색 </button>  </div>
+      </div>
+    </div>
+
+    <div class="list"><!-- json 값 출력-->
+      <i class="item" ng-repeat="syllabus in syllabuss">
+        <div class="row">
+          <a class="col" style="FONT-WEIGHT: bold;"> {{syllabus.subject}} </a>
+        </div>
+        <div class="row">
+          <div class="col" style="FONT-WEIGHT: bold;"> {{syllabus.depart}} </div>
+        </div>
+        <div class="row">
+          <div class="col" style="FONT-WEIGHT: bold;"> 구분 </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> {{syllabus.type}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> 분반 </div>
+          <div class="col"> {{syllabus.class}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> 학년 </div>
+          <div class="col"> {{syllabus.grade}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> 교수 </div>
+          <div class="col"> {{syllabus.professor}} </div>
+        </div>
+        <div class="row">
+          <div class="col" style="FONT-WEIGHT: bold;"> 계획서 공개 </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> {{syllabus.isopened}} </div>
+        </div>
+        <a class="item item-icon-left" ng-click="syllabus2({{$index}})">
+          <i class="icon ion-ios-list"></i> 강의 계획서
+        </a>
+      </i>
+    </div>
+
+  </ion-content>
+
+</ion-view>

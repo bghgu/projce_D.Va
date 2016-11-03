@@ -1,0 +1,36 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-calm"> <!--상단 바 색-->
+      <ion-nav-back-button >
+      </ion-nav-back-button>
+      <!-- 메뉴 위치-->
+      <ion-nav-buttons side="left">
+        <!-- 메뉴 토글 위치-->
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <!--메뉴 컨텐츠 이름-->
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-calm"> <!--메뉴 바 색-->
+      <h1 class="title">메뉴</h1>
+    </ion-header-bar>
+    <ion-content>
+      <!--메뉴 리스트-->
+      <ion-list>
+        <ion-item class="item-icon-left" href="#/app/myPage" menu-close><span class="icon ion-android-person"></span> 마이 페이지 </ion-item>
+        <ion-item class="item-icon-left" href="#/app/class" menu-close><span class="icon ion-ios-book"></span> 수업 관리</ion-item>
+        <ion-item class="item-icon-left" href="#/app/classRegister" menu-close><span class="icon ion-clipboard"></span> 수강 관리</ion-item>
+        <ion-item class="item-icon-left" href="#/app/grade" menu-close><span class="icon ion-android-drafts"></span> 성적 관리 </ion-item>
+        <ion-item class="item-icon-left" href="#/app/encouragement" menu-close><span class="icon ion-cash"></span> 장학 관리 </ion-item>
+        <ion-item class="item-icon-left" href="#/app/curriculum" menu-close><span class="icon ion-ios-paper"></span> 교과 관리 </ion-item>
+        <ion-item class="item-icon-left" href="#/app/graduation" menu-close><span class="icon ion-university"></span> 졸업 관리 </ion-item>
+        <ion-item class="item-icon-left" href="#/app/information" menu-close><span class="icon ion-information-circled"></span> 안내 </ion-item>
+        <ion-item class="item-icon-left" href="#/app/logout" menu-close><span class="icon ion-close-circled"></span> 로그 아웃 </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

@@ -1,0 +1,15 @@
+<ion-view view-title="학사 일정 조회" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <a class="button button-clear" href="#/app/myPage" nav-clear><i class="icon ion-ios-arrow-left"></i></a>
+  </ion-nav-buttons>
+
+  <ion-content>
+
+    <div class="row" ng-repeat="calendar in calendar">
+      <div class="col"> {{calendar.content}} </div>
+      <div class="col"> {{calendar.period}} </div>
+    </div>
+
+  </ion-content>
+</ion-view>

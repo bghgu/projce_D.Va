@@ -1,0 +1,88 @@
+<ion-view view-title="현재 이수 학점" hide-back-button="true">
+  
+  <ion-nav-buttons side="left">
+    <a class="button button-clear" href="#/app/myPage" nav-clear><i class="icon ion-ios-arrow-left"></i></a>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div class="row">
+        <div class="col"> 교양 필수 </div>
+        <div class="col"> 교양 선택 </div>
+        <div class="col"> 교양 합계 </div>
+    </div>
+    <!-- json 값 출력-->
+    <div class="row">
+        <div class="col"> {{rating[0].earned}} </div>
+        <div class="col"> {{rating[1].earned}} </div>
+        <div class="col"> {{rating[2].earned}} </div>
+    </div>
+    <div class="row">
+        <div class="col"> 전공 필수 </div>
+        <div class="col"> 전공 선택 </div>
+        <div class="col"> 전공 합계 </div>
+    </div>
+    <!-- json 값 출력-->
+    <div class="row">
+        <div class="col"> {{rating[3].earned}} </div>
+        <div class="col"> {{rating[4].earned}} </div>
+        <div class="col"> {{rating[5].earned}}</div>
+    </div>
+    <div class="row">
+        <div class="col"> 부전공 필수 </div>
+        <div class="col"> 부전공 선택 </div>
+        <div class="col"> 부전공 합계 </div>
+    </div>
+    <!-- json 값 출력-->
+    <div class="row">
+        <div class="col"> {{rating[6].earned}} </div>
+        <div class="col"> {{rating[7].earned}} </div>
+        <div class="col"> {{rating[8].earned}}</div>
+    </div>
+    <div class="row">
+        <div class="col"> 복수전공 필수 </div>
+        <div class="col"> 복수전공 선택 </div>
+        <div class="col"> 복수전공 합계 </div>
+    </div>
+    <!-- json 값 출력-->
+    <div class="row">
+        <div class="col"> {{rating[9].earned}} </div>
+        <div class="col"> {{rating[10].earned}} </div>
+        <div class="col"> {{rating[11].earned}}</div>
+    </div>
+    <div class="row">
+        <div class="col"> 교직 필수 </div>
+        <div class="col"> 평교 선택 </div>
+        <div class="col"> 기타 합계 </div>
+    </div>
+    <!-- json 값 출력-->
+    <div class="row">
+        <div class="col"> {{rating[12].earned}} </div>
+        <div class="col"> {{rating[13].earned}} </div>
+        <div class="col"> {{rating[14].earned}} </div>
+    </div>
+    <div class="row">
+        <div class="col"> 편입(전공) 필수 </div>
+        <div class="col"> 편입(교양) 선택 </div>
+        <div class="col"> 편입 합계 </div>
+    </div>
+    <!-- json 값 출력-->
+    <div class="row">
+        <div class="col"> {{rating[15].earned}} </div>
+        <div class="col"> {{rating[16].earned}} </div>
+        <div class="col"> {{rating[17].earned}} </div>
+    </div>
+     <div class="row">
+        <div class="col" style="FONT-WEIGHT: bold;"> 졸업 학점 </div>
+        <div class="col" style="FONT-WEIGHT: bold;" > 취득 학점 </div>
+        <div class="col" style="FONT-WEIGHT: bold;" > 남은 학점 </div>
+    </div>
+    <div class="row">
+        <div class="col"  style="FONT-WEIGHT: bold;"> 130 </div>
+        <!-- json 값 출력-->
+        <div class="col"  style="FONT-WEIGHT: bold;"> {{sum}} </div>
+        <div class="col"  style="FONT-WEIGHT: bold;"> {{rest}} </div>
+    </div>
+    <p style="TEXT-ALIGN: center;"> 남은 학점은 지난학기까지 입니다. </p>
+    
+  </ion-content>
+</ion-view>

@@ -1,0 +1,28 @@
+<ion-view view-title="학내 제출용 성적증명서 조회" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <a class="button button-clear" href="#/app/grade" nav-clear><i class="icon ion-ios-arrow-left"></i></a>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div class="row">
+      <div class="col"> 년도 </div>
+      <div class="col"> 학기 </div>
+      <div class="col col-33"> 과목명 </div>
+      <div class="col"> 구분 </div>
+      <div class="col"> 학점 </div>
+      <div class="col"> 성적 </div>
+    </div>
+    <div class="row" ng-repeat="print in print | filter: { year: '20' }">
+        <div class="col"> {{print.year}} </div>
+        <div class="col" > {{print.semester}} </div>
+        <div class="col col-33"> {{print.subject}} </div>
+        <div class="col"> {{print.type}} </div>
+        <div class="col"> {{print.credit}} </div>
+        <div class="col"> {{print.grade}} </div>
+    </div>
+    <div class="row">
+      <div class="col" style="FONT-WEIGHT: bold;"> {{sum.subject}} </div>
+    </div>
+  </ion-content>
+</ion-view>

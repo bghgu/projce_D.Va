@@ -1,0 +1,27 @@
+<ion-view view-title="장학 내역 조회" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <a class="button button-clear" href="#/app/encouragement" nav-clear><i class="icon ion-ios-arrow-left"></i></a>
+  </ion-nav-buttons>
+
+  <ion-content>
+
+    <div class="list">
+      <i class="item" ng-repeat="List in scholarshipList">
+        <div class="row">
+          <div class="col"> {{List.year}} </div>
+          <div class="col"> {{List.semester}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> {{List.scholarship_name}} </div>
+          <div class="col"> {{List.registration_scholarship}}원 </div>
+        </div>
+        <div class="row">
+          <div class="col"> {{List.order}} </div>
+          <div class="col"> {{List.benefit}} </div>
+        </div>
+      </i>
+    </div>
+  </ion-content>
+</ion-view>
+
