@@ -579,7 +579,6 @@ angular.module('starter.controllers', ['starter.services'])
 })
 //공지사항
 .controller('noticesCtrl', function($scope, $http, $location, $ionicLoading, $localstorage) {
-  console.log("1");
   if($localstorage.getObject('cookie')){
     $http({
       method: 'get',
@@ -588,7 +587,6 @@ angular.module('starter.controllers', ['starter.services'])
       data: ({ cookie: $localstorage.getObject('cookie') })
     })
     .success(function(data, status, headers, config){
-      $ionicLoading.hide();
       $localstorage.setObject('notices', data);
       console.log(notices);
       // 리턴

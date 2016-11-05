@@ -52,7 +52,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       views: {
         'menuContent': {
           templateUrl: 'templates/myPage/myPage.html',
-          Controller: 'noticesCtrl'
+          //Controller: 'noticesCtrl'
         }
       }
     })
