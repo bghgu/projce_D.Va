@@ -608,21 +608,17 @@ angular.module('starter.controllers', ['starter.services'])
     $location.path('/login');
   };
 })
-/*
+
 // 학사 일정 조회
 .controller('calendarCtrl', function($scope, $http, $location, $ionicLoading, $localstorage) {
-    $ionicLoading.show();
     var date = new Date();
     var month = date.getMonth()+1;
     var year = date.getFullYear();
-    console.log(date);
-    console.log(year);
-    console.log(month);
+    $ionicLoading.show();
     if($localstorage.getObject('cookie')){
       $http({
         method: 'post',
-        //url: 'http://c.youngbin.xyz/life/schedules',
-        url: 'http://c.youngbin.xyz/page/calendar',
+        url: 'http://c.youngbin.xyz/life/schedules',
         //url: 'https://f.youngbin.xyz/page/calendar',
         headers: {'Content-Type': 'application/json'},
         data: ({
@@ -652,7 +648,7 @@ angular.module('starter.controllers', ['starter.services'])
       $location.path('/login');
     };
   })
-*/
+
 //학식 조회 - 식단표 조회
 /*.controller('foodCtrl', function($scope, $http, $location, $ionicLoading, $localstorage) {
     $ionicLoading.show();
