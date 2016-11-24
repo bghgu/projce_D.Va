@@ -18,53 +18,56 @@ Ionic framework와 Angular.js을 사용한 하이브리드앱
   ionic serve
   ```
   - `localhost:8100`으로 실행이 가능합니다
+  - 
   - 중지하려면, 키보드에서 `Crtl + C`를 누릅니다.
 
 ### android build
 
-  - ionic platform list
-  - Docker Image 를 빌드합니다.
-
-  ```bash
-  docker build -t forest-nodejs:latest .
-  ```
-  - ionic platform add android
+  - `SDK`가 설치되어 있어야 합니다
+  - 
+  - ionic platform에 안드로이드를 추가합니다
 
   ```bash
   ionic platform add android
   ```
-  - 빌드한 Docker Image 로 부터 컨테이너를 생성하고, 80번 포트에서 컨테이너의 3000번 포트로 포워딩 하여 데몬 모드로 컨테이너를 시작합니다.
+  - release용 android apk 빌드
 
   ```bash
-  docker run -d -p 80:3000 --name <원하는 컨테이너 이름> forest-nodejs:latest
+  ionic build --release android
   ```
-
-  - 컨테이너를 중지하려면 다음 명령을 실행합니다.
+  - 키스토어 생성 keytool 
+  - 
+  ```bash
+  keytool -genkey -v -keystore key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+  ```
+  - apk 사인 jarsigner
   
   ```bash
-  docker stop <컨테이너 이름>
+  jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore key.keystore android-release-unsigned.apk alias_name
+  ```
+  
+  - 확인 jarsigner jar verified
+  
+  ```bash
+  jarsigner -verify -verbose -certs android-release-unsigned.apk
+  ```
+  
+  - optimize zipalign
+  
+  ```bash
+  zipalign -v 4 android-release-unsigned.apk foressst.apk
   ```
 ### ios build
 
-  - xcode가 설치된 곳 에서만 가능합니다.
-  - ionic platform add ios
+  - xcode가 설치된 맥 에서만 가능합니다.
+  - 
+  - ionic platform에 ios를 추가합니다
 
   ```bash
   ionic platform add ios
   ```
-  - 빌드된 Docker Image 를 확인합니다.
+  - ios build
 
   ```bash
-  docker images
-  ```
-  - 빌드한 Docker Image 로 부터 컨테이너를 생성하고, 80번 포트에서 컨테이너의 3000번 포트로 포워딩 하여 데몬 모드로 컨테이너를 시작합니다.
-
-  ```bash
-  docker run -d -p 80:3000 --name <원하는 컨테이너 이름> forest-nodejs:latest
-  ```
-
-  - 컨테이너를 중지하려면 다음 명령을 실행합니다.
-  
-  ```bash
-  docker stop <컨테이너 이름>
+  ionic build iOS —release
   ```
