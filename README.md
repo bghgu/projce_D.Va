@@ -17,7 +17,7 @@ Ionic framework와 Angular.js을 사용한 하이브리드앱
   ```bash
   ionic serve
   ```
-  - localhost:8100으로 실행이 가능합니다
+  - `localhost:8100`으로 실행이 가능합니다
   - 중지하려면, 키보드에서 `Crtl + C`를 누릅니다.
 
 ### android build
