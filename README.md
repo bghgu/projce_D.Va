@@ -24,7 +24,6 @@ Ionic framework와 Angular.js을 사용한 하이브리드앱
 ### android build
 
   - `SDK`가 설치되어 있어야 합니다
-  - 
   - ionic platform에 안드로이드를 추가합니다
 
   ```bash
@@ -36,7 +35,7 @@ Ionic framework와 Angular.js을 사용한 하이브리드앱
   ionic build --release android
   ```
   - 키스토어 생성 keytool 
-  - 
+  
   ```bash
   keytool -genkey -v -keystore key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
   ```
@@ -60,7 +59,6 @@ Ionic framework와 Angular.js을 사용한 하이브리드앱
 ### ios build
 
   - xcode가 설치된 맥 에서만 가능합니다.
-  - 
   - ionic platform에 ios를 추가합니다
 
   ```bash
