@@ -18,7 +18,6 @@ Ionic framework와 Angular.js을 사용한 하이브리드앱
   ionic serve
   ```
   - `localhost:8100`으로 실행이 가능합니다
-  - 
   - 중지하려면, 키보드에서 `Crtl + C`를 누릅니다.
 
 ### android build
@@ -58,7 +57,7 @@ Ionic framework와 Angular.js을 사용한 하이브리드앱
   ```
 ### ios build
 
-  - xcode가 설치된 맥 에서만 가능합니다.
+  - `XCODE`가 설치된 맥 에서만 가능합니다.
   - ionic platform에 ios를 추가합니다
 
   ```bash
