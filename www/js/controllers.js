@@ -40,6 +40,20 @@ angular.module('starter.controllers', ['starter.services'])
        return false;
      }
 
+     //소프과 학인
+     if(typeof(user.username)=='201232016'){
+       //로딩 종료
+       $ionicLoading.hide();
+       //팝업 띄우기
+       var alertPopup = $ionicPopup.alert({
+         //팝업이름
+        title: 'Warning Message',
+        //팝업 메세지
+        template: '실험.'
+      });
+       return false;
+     }
+
      //로그인 기능 실행
      $http({
        method: 'post',
@@ -628,6 +642,7 @@ angular.module('starter.controllers', ['starter.services'])
       })
       .success(function(data, status, headers, config){
         $ionicLoading.hide();
+        console.log(data);
         $localstorage.setObject('calendar', data);
         $scope.calendar = $localstorage.getObject('calendar').calendar;
       })
