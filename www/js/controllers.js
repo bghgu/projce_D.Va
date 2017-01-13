@@ -20,6 +20,7 @@ angular.module('starter.controllers', ['starter.services'])
      if(typeof(user)=='undefined'){
        //로딩 종료
        $ionicLoading.hide();
+       console.log(user);
        //팝업 띄우기
        var alertPopup = $ionicPopup.alert({
          //팝업이름
@@ -33,6 +34,7 @@ angular.module('starter.controllers', ['starter.services'])
      //비밀번호를 입력하지 않았을 때
      if(typeof(user.password)=='undefined'){
        $ionicLoading.hide();
+       console.log(user);
        var alertPopup = $ionicPopup.alert({
         title: 'Warning Message',
         template: '비밀번호를 입력해 주세요.'
@@ -41,9 +43,9 @@ angular.module('starter.controllers', ['starter.services'])
      }
 
      //소프과 학인
-     if(typeof(user.username)=='201232016'){
-       //로딩 종료
+     if(user.username == "201232016"){
        $ionicLoading.hide();
+       console.log(user.username);
        //팝업 띄우기
        var alertPopup = $ionicPopup.alert({
          //팝업이름
@@ -67,6 +69,7 @@ angular.module('starter.controllers', ['starter.services'])
      .success(function(data) {
        //로그인 성공 유무 판단
        var count = data.length
+       console.log(user);
 
        //로그인 성공
        if(count == 4) {
@@ -80,8 +83,9 @@ angular.module('starter.controllers', ['starter.services'])
          $localstorage.setObject('cookie', data);
          $localstorage.set('id', user.username);
          $localstorage.set('pw', user.password);
+
          //마이 페이지로 이동
-         $location.path('/app/myPage');
+         //$location.path('/app/myPage');
        }
 
        //로그인 실패
