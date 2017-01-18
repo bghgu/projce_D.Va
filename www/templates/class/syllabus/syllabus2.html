@@ -57,15 +57,17 @@
             </div>
             <div class="row">
               <div class="col"> 연구실 전화번호 </div>
-              <div class="col"> <button href="tel:+82-10-9946-9303" class="button button-positive"> {{info.lab_phone}}  <i class="icon ion-ios-telephone"> </i> </button> </div>
+              <div class="col"> <a href="tel:{{info.lab_phone}}" class="button button-positive"> {{info.lab_phone}}  <i class="icon ion-ios-telephone"> </i> </a> </div>
+              <!--<div class="col"> <a href="sms:{{info.lab_phone}}" class="button button-positive"> {{info.lab_phone}}  <i class="icon ion-ios-telephone"> </i> </a> </div>-->
             </div>
             <div class="row">
               <div class="col"> e-mail </div>
-              <div class="col"> <button  class="button button-positive"> {{info.email}}  <i class="icon ion-ios-email"> </i> </button> </div>
+              <div class="col"> <a href="mailto:{{info.email}}" class="button button-positive"> {{info.email}}  <i class="icon ion-ios-email"> </i> </a> </div>
             </div>
             <div class="row">
               <div class="col"> 연락처 </div>
-              <div class="col"> <button href="tel:+82-10-9946-9303" class="button button-positive"> {{info.phone}}  <i class="icon ion-ios-telephone"> </i> </button> </div>
+              <!--<div class="col"> <a href="tel:{{info.phone}}" class="button button-positive"> {{info.lab_phone}}  <i class="icon ion-ios-telephone"> </i> </a> </div>-->
+              <div class="col"> <a href="sms:{{info.phone}}" class="button button-positive"> {{info.phone}}  <i class="icon ion-ios-telephone"> </i> </a> </div>
             </div>
             <div class="row">
               <div class="col"> 홈페이지 </div>
