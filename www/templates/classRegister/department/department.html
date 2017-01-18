@@ -14,9 +14,13 @@
             <label class="item item-input item-select">
               <div class="input-label"> 연도 </div>
                 <select ng-model="data.year">
-                  <option value="2016"> 2017 </option>
+                  <option value="2017"> 2017 </option>
                   <option value="2016"> 2016 </option>
                   <option value="2015"> 2015 </option>
+                  <option value="2014"> 2014 </option>
+                  <option value="2013"> 2013 </option>
+                  <option value="2012"> 2012 </option>
+                  <option value="2011"> 2011 </option>
                 </select>
             </label>
 
@@ -111,34 +115,37 @@
           <div class="col" style="FONT-WEIGHT: bold;"> {{depart.headcounts}} </div>
         </div>
         <div class="row">
-          <div class="col"> 분반 </div>
-          <div class="col"> {{depart.class}} </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> 분반 </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> {{depart.class}} </div>
         </div>
         <div class="row">
-          <div class="col"> 학년 </div>
-          <div class="col"> {{depart.grade}} </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> 학년 </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> {{depart.grade}} </div>
         </div>
         <div class="row">
-          <div class="col"> 교수 </div>
-          <div class="col"> {{depart.tutor}} </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> 교수 </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> {{depart.tutor}} </div>
         </div>
         <div class="row">
-          <div class="col"> 학과제한 </div>
-          <div class="col"> {{depart.depart_restriction}} </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> 학과제한 </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> {{depart.depart_restriction}} </div>
         </div>
         <div class="row">
-          <div class="col"> 학년제한 </div>
-          <div class="col"> {{depart.grade_restriction}} </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> 학년제한 </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> {{depart.grade_restriction}} </div>
         </div>
         <div class="row">
-          <div class="col"> 장소/시간 </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> 장소/시간 </div>
         </div>
         <div class="row">
-          <p class="col"> {{depart.time_location}} </p>
+          <div class="col" style="FONT-WEIGHT: bold;"> {{depart.time_location}} </div>
         </div>
-        <div class="row">
+        <!--<div class="row">
           <div class="col"> 확인사항 </div>
           <div class="col"> {{depart.note}} </div>
+        </div>-->
+        <div class="row">
+          <div class="col" style="FONT-WEIGHT: bold; white-space:normal;"> {{depart.note}} </div>
         </div>
       </i>
     </div>

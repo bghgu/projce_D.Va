@@ -5,6 +5,33 @@
   </ion-nav-buttons>
 
   <ion-content>
-
+    <div class="list">
+      <i class="item">
+        <div class="col" style="FONT-WEIGHT: bold;"> 지도 교수 </div>
+        <div class="row">
+          <div class="col"> 연도 / 학기 </div>
+          <div class="col"> 지도 교수 </div>
+          <div class="col"> 상담 횟수 </div>
+        </div>
+        <div class="row" ng-repeat="adviser in adviser">
+          <div class="col"> {{adviser.year}}년 {{adviser.semester}} </div>
+          <div class="col"> {{adviser.adviser}} </div>
+          <div class="col"> {{adviser.times}} </div>
+        </div>
+      </i>
+      <i class="item">
+        <div class="col" style="FONT-WEIGHT: bold;"> 상담 내역 </div>
+        <div class="row">
+          <div class="col"> 상담일 </div>
+          <div class="col"> 상담자 </div>
+          <div class="col"> 상담 구분 </div>
+        </div>
+        <div class="row" ng-repeat="history in history">
+          <div class="col"> {{history.date}} </div>
+          <div class="col"> {{history.consultant}} </div>
+          <div class="col"> {{history.type}} </div>
+        </div>
+      </i>
+    </div>
   </ion-content>
 </ion-view>

@@ -96,13 +96,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
-  //학식 메뉴 조회
+  //나의 상담 이력 조회
     .state('app.consulting', {
       url: '/consulting',
       views: {
         'menuContent': {
           templateUrl: 'templates/myPage/consulting.html',
-          //controller: 'consultingCtrl'
+          controller: 'consultingCtrl'
         }
       }
     })
