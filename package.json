@@ -1,7 +1,7 @@
 {
   "name": "foressst",
-  "version": "1.2.1",
-  "description": "foressst: An Ionic project",
+  "version": "1.2.2",
+  "description": "foressst: An Ionic project_D.Va",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",

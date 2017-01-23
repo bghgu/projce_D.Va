@@ -136,7 +136,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
-  //강의 계획서
+  //강의 계획서1
     .state('app.syllabus2', {
       url: '/syllabus2',
       views: {
@@ -146,6 +146,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
+    //강의 계획서2
+      .state('app.syllabus3', {
+        url: '/syllabus3',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/class/syllabus/syllabus3.html',
+            //controller: 'syllabus3Ctrl'
+          }
+        }
+      })
   /////////////////////////////////////////////////////////////////////////////////////////////////////
   //수강 관리
     .state('app.classRegister', {

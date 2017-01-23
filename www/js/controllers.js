@@ -4,18 +4,11 @@ angular.module('starter.controllers', ['starter.services'])
   .controller('loginCtrl', function($scope, $http, $location, $ionicPopup, $ionicLoading, $localstorage) {
     //자동로그인 설정
     if (($localstorage.get('id') != undefined) && ($localstorage.get('pw') != undefined)) {
-      /*var alertPopup = $ionicPopup.alert({
-          title: 'Welcome',
-          template: '자동 로그인 되었습니다.'
-      });*/
-      //페이지이동
-      //$location.path('/app/myPage');
+      $ionicLoading.show();
       $http({
           method: 'post',
-          //일반통신
-          url: 'http://c.youngbin.xyz/user/login',
-          //ssl통신
-          //url: 'https://f.youngbin.xyz/user/login',
+          //url: 'http://c.youngbin.xyz/user/login',
+          url: 'https://c.youngbin.xyz/foressst/user/login',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -25,82 +18,37 @@ angular.module('starter.controllers', ['starter.services'])
           })
         })
         .success(function(data) {
-          //로그인 성공 유무 판단
           var count = data.length
-          //console.log(data);
-          //로그인 성공
           if (count == 4) {
             $ionicLoading.hide();
-
             var alertPopup = $ionicPopup.alert({
               title: 'Welcome',
               template: '자동 로그인 되었습니다.'
             });
-
             $localstorage.setObject('cookie', data);
-
-            /*$http({
-                method: 'post',
-                //일반통신
-                url: 'http://c.youngbin.xyz/user/userinfo',
-                //ssl통신
-                //url: 'https://f.youngbin.xyz/user/userinfo',
-                headers: {
-                  'Content-Type': 'application/json'
-                },
-                data: ({
-                  cookie: $localstorage.getObject('cookie')
-                })
-              })
-              .success(function(data) {
-                console.log(data.userinfo.name)
-                console.log(data.userinfo.id)
-                $localstorage.setObject('userinfo', data)
-                console.log($localstorage.getObject('userinfo').userinfo.name)
-                console.log($localstorage.getObject('userinfo').userinfo.id)
-              })*/
-
-            //마이 페이지로 이동
             $location.path('/app/myPage');
           }
         })
     }
-    //console.log(window.localStorage['id'])
-    //console.log(window.localStorage['pw'])
-
-    //console.log($localstorage.get('id'))
-    //console.log($localstorage.get('pw'))
 
     $scope.login = function(user) {
-      //로딩 표시
       $ionicLoading.show();
-
-      //아이디를 입력하지 않았을 때
       if (typeof(user) == 'undefined') {
-        //로딩 종료
         $ionicLoading.hide();
-        //console.log(user);
-        //팝업 띄우기
         var alertPopup = $ionicPopup.alert({
-          //팝업이름
           title: 'Warning Message',
-          //팝업 메세지
           template: '아이디를 입력해 주세요.'
         });
         return false;
       }
-
-      //비밀번호를 입력하지 않았을 때
       if (typeof(user.password) == 'undefined') {
         $ionicLoading.hide();
-        //console.log(user);
         var alertPopup = $ionicPopup.alert({
           title: 'Warning Message',
           template: '비밀번호를 입력해 주세요.'
         });
         return false;
       }
-
       //소프과 학인
       /*if(user.username == "201232016"){
         $ionicLoading.hide();
@@ -114,16 +62,10 @@ angular.module('starter.controllers', ['starter.services'])
        });
         return false;
       }*/
-      //console.log(user.username)
-      //console.log(user.password)
-
-      //로그인 기능 실행
       $http({
           method: 'post',
-          //일반통신
-          url: 'http://c.youngbin.xyz/user/login',
-          //ssl통신
-          //url: 'https://f.youngbin.xyz/user/login',
+          //url: 'http://c.youngbin.xyz/user/login',
+          url: 'https://c.youngbin.xyz/foressst/user/login',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -133,70 +75,31 @@ angular.module('starter.controllers', ['starter.services'])
           })
         })
         .success(function(data) {
-          //로그인 성공 유무 판단
           var count = data.length
-          //console.log(user);
-
-          //로그인 성공
           if (count == 4) {
-
             $ionicLoading.hide();
-
             var alertPopup = $ionicPopup.alert({
               title: 'Welcome',
               template: '환영합니다.'
             });
-
             $localstorage.setObject('cookie', data);
             $localstorage.set('id', user.username);
             $localstorage.set('pw', user.password);
-
-            /*$http({
-                method: 'post',
-                //일반통신
-                url: 'http://c.youngbin.xyz/user/userinfo',
-                //ssl통신
-                //url: 'https://f.youngbin.xyz/user/userinfo',
-                headers: {
-                  'Content-Type': 'application/json'
-                },
-                data: ({
-                  cookie: $localstorage.getObject('cookie')
-                })
-              })
-              .success(function(data) {
-                console.log(data.userinfo.name)
-                console.log(data.userinfo.id)
-                $localstorage.setObject('userinfo', data)
-                console.log($localstorage.getObject('userinfo').userinfo.name)
-                console.log($localstorage.getObject('userinfo').userinfo.id)
-              })*/
-
-            //console.log($localstorage.get('id'))
-            //console.log($localstorage.get('pw'))
-
             //window.localStorage['id'] = user.username
             //window.localStorage['pw'] = user.password
-            //마이 페이지로 이동
             $location.path('/app/myPage');
           }
-
-          //로그인 실패
           else if (count == 13) {
             $ionicLoading.hide();
-
             var alertPopup = $ionicPopup.alert({
               title: 'Warning Message',
               template: '아이디와 비밀번호를 확인해 주세요.'
             });
-
             $localstorage.setObject('cookie', data);
           }
         })
-        //서버와의 통신이 정상적이지 않을 때
         .error(function(data, status, headers, config) {
           $ionicLoading.hide();
-
           var alertPopup = $ionicPopup.alert({
             title: 'Warning Message',
             template: '잠시후 다시 시도해 주세요.'
@@ -222,37 +125,28 @@ angular.module('starter.controllers', ['starter.services'])
   //마이 페이지
   .controller('creditsCtrl', function($scope, $http, $location, $localstorage, $ionicLoading, $ionicPopup) {
     $ionicLoading.show();
-    //쿠키값이 저장되있을때
     if ($localstorage.getObject('cookie')) {
-      //http통신
       $http({
           method: 'post',
-          url: 'http://c.youngbin.xyz/user/credits',
-          //ssl통신 주소
-          //url: 'https://f.youngbin.xyz/user/credits',
-          //헤더
+          //url: 'http://c.youngbin.xyz/user/credits',
+          url: 'https://c.youngbin.xyz/foressst/user/credits',
           headers: {
             'Content-Type': 'application/json'
           },
-          //값
           data: ({
             cookie: $localstorage.getObject('cookie')
           })
         })
-        //성공적으로 정보를 받아올 경우
         .success(function(data) {
           $ionicLoading.hide();
-          //json값 저장
           $localstorage.setObject('credits', data);
           $scope.sum = 0;
-          //값을 변수에 할당
           for (var i = 0; i < data.credits.length; i++) {
             $scope.sum += Number(($localstorage.getObject('credits').credits[i].earned)) / 2;
           };
           $scope.rating = $localstorage.getObject('credits').credits;
           $scope.rest = (130 - $scope.sum);
         })
-        //서버와 통신이 정상적이지 않을 때
         .error(function(data, status, headers, config) {
           $ionicLoading.hide();
           var alertPopup = $ionicPopup.alert({
@@ -276,8 +170,8 @@ angular.module('starter.controllers', ['starter.services'])
     if ($localstorage.getObject('cookie')) {
       $http({
           method: 'post',
-          url: 'http://c.youngbin.xyz/user/attendance',
-          //url: 'https://f.youngbin.xyz/user/attendance',
+          //url: 'http://c.youngbin.xyz/user/attendance',
+          url: 'https://c.youngbin.xyz/foressst/user/attendance',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -288,22 +182,14 @@ angular.module('starter.controllers', ['starter.services'])
         .success(function(data, status, headers, config) {
           $ionicLoading.hide();
           $localstorage.setObject('attendance', data);
-          //console.log(data);
           $scope.attendance = $localstorage.getObject('attendance').attendance;
-          // 리턴
-
           var count = $localstorage.getObject('attendance').attendance
-          //console.log(count.length);
-
           if (count == 0) {
-
             var alertPopup = $ionicPopup.alert({
               title: 'Error',
               template: '수강한 과목이 없습니다.'
             });
           }
-
-          /////////////////////
         })
         .error(function(data, status, headers, config) {
           $ionicLoading.hide();
@@ -330,8 +216,8 @@ angular.module('starter.controllers', ['starter.services'])
     if ($localstorage.getObject('cookie')) {
       $http({
           method: 'post',
-          url: 'http://c.youngbin.xyz/class/timetable',
-          //url: 'https://f.youngbin.xyz/class/timetable',
+          //url: 'http://c.youngbin.xyz/class/timetable',
+          url: 'https://c.youngbin.xyz/foressst/class/timetable',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -347,14 +233,11 @@ angular.module('starter.controllers', ['starter.services'])
           $scope.timetables_wedns = $localstorage.getObject('timetable').wednsday;
           $scope.timetables_thurs = $localstorage.getObject('timetable').thursday;
           $scope.timetables_fri = $localstorage.getObject('timetable').friday;
-
           var a = $localstorage.getObject('timetable').monday
           var b = $localstorage.getObject('timetable').tuesday
           var c = $localstorage.getObject('timetable').wednsday
           var d = $localstorage.getObject('timetable').thursday
           var e = $localstorage.getObject('timetable').friday
-          //console.log(count.length);
-
           if (a == 0 && b == 0 && c == 0 & d == 0 & e == 0) {
             var alertPopup = $ionicPopup.alert({
               title: 'Error',
@@ -385,9 +268,7 @@ angular.module('starter.controllers', ['starter.services'])
     var date = new Date();
     var year = date.getFullYear();
     var month = date.getMonth();
-
     if ($localstorage.getObject('cookie')) {
-      //정보를 입력하지 않았을 때
       $scope.syllabus = function(data) {
         $ionicLoading.show();
         if (typeof(data) == 'undefined') {
@@ -398,11 +279,9 @@ angular.module('starter.controllers', ['starter.services'])
           });
           return false;
         }
-        //만약 연도를 설정하지 않을 시 2016년으로 자동 설정
         if (typeof(data.year) == 'undefined') {
           data.year = year;
         }
-        //학기를 설정하지 않을 시 2학기로 자동 설정
         if (typeof(data.semester) == 'undefined') {
           if (month < 7) {
             data.semester = "Z0101";
@@ -410,7 +289,6 @@ angular.module('starter.controllers', ['starter.services'])
             data.semester = "Z0102"
           }
         }
-        //교수명, 과목명, 학부명을 입력하지 않을 시 팝업창
         if (typeof(data.keyword) == 'undefined') {
           if (data.type == "GYOSU") {
             $ionicLoading.hide();
@@ -439,12 +317,11 @@ angular.module('starter.controllers', ['starter.services'])
         }
         $http({
             method: 'post',
-            url: 'http://c.youngbin.xyz/class/syllabus',
-            //url: 'https://f.youngbin.xyz/class/syllabus',
+            //url: 'http://c.youngbin.xyz/class/syllabus',
+            url: 'https://c.youngbin.xyz/foressst/class/syllabus',
             headers: {
               'Content-Type': 'application/json'
             },
-            //값에 연도,학기,타입,교수,키워드의 값을 보낸다.
             data: ({
               year: data.year,
               semester: data.semester,
@@ -456,8 +333,6 @@ angular.module('starter.controllers', ['starter.services'])
           .success(function(data, status, headers, config) {
             $ionicLoading.hide();
             $localstorage.setObject('syllabus', data);
-            console.log(data)
-            //
             var count = $localstorage.getObject('syllabus').syllabus[0].code
             if (count == "자료가 없습니다.") {
               $ionicLoading.hide();
@@ -466,13 +341,11 @@ angular.module('starter.controllers', ['starter.services'])
                 template: '자료가 없습니다.'
               });
             }
-            //
             $scope.syllabus2 = function(data) {
               $localstorage.set('order', data);
               $location.path('/app/syllabus2');
               $localstorage.get('order');
             }
-
             $scope.syllabuss = $localstorage.getObject('syllabus').syllabus;
           })
           .error(function(data) {
@@ -493,17 +366,13 @@ angular.module('starter.controllers', ['starter.services'])
       $location.path('/login');
     };
   })
-
-
   // 강의 계획서
   .controller('syllabus2Ctrl', function($scope, $http, $location, $ionicLoading, $localstorage, $ionicPopup) {
-
     if ($localstorage.getObject('syllabus').syllabus[$localstorage.get('order')].url) {
-
       $http({
           method: 'post',
-          url: 'http://c.youngbin.xyz/page/syllabus_details',
-          //url: 'https://f.youngbin.xyz/page/syllabus_details',
+          //url: 'http://c.youngbin.xyz/page/syllabus_details',
+          url: 'https://c.youngbin.xyz/foressst/page/syllabus_details',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -545,9 +414,7 @@ angular.module('starter.controllers', ['starter.services'])
     var date = new Date();
     var year = date.getFullYear();
     var month = date.getMonth();
-
     /*if ($localstorage.getObject('cookie')) {
-
       if (month < 7) {
         sem = "Z0101";
         //console.log(sem)
@@ -555,11 +422,10 @@ angular.module('starter.controllers', ['starter.services'])
         semr = "Z0102"
         //console.log(sem)
       }
-
       $http({
           method: 'post',
           url: 'http://c.youngbin.xyz/enroll/subjects',
-          //url: 'https://f.youngbin.xyz/enroll/subjects',
+          //url: 'https://c.youngbin.xyz/enroll/subjects',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -591,9 +457,7 @@ angular.module('starter.controllers', ['starter.services'])
       });
       $location.path('/login');
     }; */
-
     if ($localstorage.getObject('cookie')) {
-      //정보를 입력하지 않았을 때
       $scope.department = function(data) {
         $ionicLoading.show();
         if (typeof(data) == 'undefined') {
@@ -604,32 +468,23 @@ angular.module('starter.controllers', ['starter.services'])
           });
           return false;
         }
-
         if (typeof(data.year) == 'undefined') {
           data.year = year;
-          //console.log(data.year)
         }
-
         if (typeof(data.semester) == 'undefined') {
           if (month < 7) {
             data.semester = "Z0101";
-            //console.log(data.semester)
           } else {
             data.semester = "Z0102"
-            //console.log(data.semester)
           }
         }
-
         if (typeof(data.professor) == 'undefined') {
           data.professor = '';
         }
-        //console.log(data.year)
-        //console.log(data.semester)
-        //console.log(data.depart)
         $http({
             method: 'post',
-            url: 'http://c.youngbin.xyz/enroll/subjects',
-            //url: 'https://f.youngbin.xyz/enroll/subjects',
+            //url: 'http://c.youngbin.xyz/enroll/subjects',
+            url: 'https://c.youngbin.xyz/foressst/enroll/subjects',
             headers: {
               'Content-Type': 'application/json'
             },
@@ -645,7 +500,6 @@ angular.module('starter.controllers', ['starter.services'])
             $localstorage.setObject('department', data);
             $ionicLoading.hide();
             $scope.departments = $localstorage.getObject('department').subjects;
-
             var count = $localstorage.getObject('department').subjects[0].type
             if (count == "자료가 없습니다.") {
               $ionicLoading.hide();
@@ -654,7 +508,6 @@ angular.module('starter.controllers', ['starter.services'])
                 template: '자료가 없습니다.'
               });
             }
-
           })
           .error(function(data, status, headers, config) {
             $ionicLoading.hide();
@@ -674,15 +527,14 @@ angular.module('starter.controllers', ['starter.services'])
       $location.path('/login');
     };
   })
-
   //학점 세이브 조회
   .controller('saveCtrl', function($scope, $http, $location, $ionicLoading, $localstorage) {
     $ionicLoading.show();
     if ($localstorage.getObject('cookie')) {
       $http({
           method: 'post',
-          url: 'http://c.youngbin.xyz/enroll/saved_credits',
-          //url: 'https://f.youngbin.xyz/enroll/saved_credits',
+          //url: 'http://c.youngbin.xyz/enroll/saved_credits',
+          url: 'https://c.youngbin.xyz/foressst/enroll/saved_credits',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -693,10 +545,7 @@ angular.module('starter.controllers', ['starter.services'])
         .success(function(data, status, headers, config) {
           $ionicLoading.hide();
           $localstorage.setObject('save', data);
-          console.log(data)
-          //
           var count = $localstorage.getObject('save').details.length
-          console.log(count)
           if (count == 0) {
             $ionicLoading.hide();
             var alertPopup = $ionicPopup.alert({
@@ -707,7 +556,6 @@ angular.module('starter.controllers', ['starter.services'])
             $scope.save = $localstorage.getObject('save').status;
             $scope.details = $localstorage.getObject('save').details;
           }
-          //
         })
         .error(function(data, status, headers, config) {
           $ionicLoading.hide();
@@ -726,15 +574,14 @@ angular.module('starter.controllers', ['starter.services'])
       $location.path('/login');
     };
   })
-
   //장학 신청 결과
   .controller('scholarshipResultCtrl', function($scope, $http, $location, $ionicLoading, $localstorage) {
     $ionicLoading.show();
     if ($localstorage.getObject('cookie')) {
       $http({
           method: 'post',
-          url: 'http://c.youngbin.xyz/scholarship/result',
-          //url: 'https://f.youngbin.xyz/scholarship/result',
+          //url: 'http://c.youngbin.xyz/scholarship/result',
+          url: 'https://c.youngbin.xyz/foressst/scholarship/result',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -746,7 +593,6 @@ angular.module('starter.controllers', ['starter.services'])
           $ionicLoading.hide();
           $localstorage.setObject('scholarshipResult', data);
           $scope.scholarshipResult = $localstorage.getObject('scholarshipResult').apply_history;
-          // 리턴
         })
         .error(function(data, status, headers, config) {
           $ionicLoading.hide();
@@ -765,15 +611,14 @@ angular.module('starter.controllers', ['starter.services'])
       $location.path('/login');
     };
   })
-
   //장학 내역 조회
   .controller('scholarshipListCtrl', function($scope, $http, $location, $ionicLoading, $localstorage, $ionicPopup) {
     $ionicLoading.show();
     if ($localstorage.getObject('cookie')) {
       $http({
           method: 'post',
-          url: 'http://c.youngbin.xyz/scholarship/history',
-          //url: 'https://f.youngbin.xyz/scholarship/history',
+          //url: 'http://c.youngbin.xyz/scholarship/history',
+          url: 'https://c.youngbin.xyz/foressst/scholarship/history',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -784,10 +629,8 @@ angular.module('starter.controllers', ['starter.services'])
         .success(function(data, status, headers, config) {
           $ionicLoading.hide();
           $localstorage.setObject('scholarshipList', data);
-          //console.log(data)
           $scope.scholarshipList = $localstorage.getObject('scholarshipList').scholarship_history;
           var count = $localstorage.getObject('scholarshipList').scholarship_history.length
-          //console.log(count)
           if (count == 0) {
             $ionicLoading.hide();
             var alertPopup = $ionicPopup.alert({
@@ -795,7 +638,6 @@ angular.module('starter.controllers', ['starter.services'])
               template: '장학내역이 없습니다 ㅠㅠ'
             });
           }
-          // 리턴
         })
         .error(function(data, status, headers, config) {
           $ionicLoading.hide();
@@ -814,15 +656,14 @@ angular.module('starter.controllers', ['starter.services'])
       $location.path('/login');
     };
   })
-
   //교내 제출용 성적증명서
   .controller('printCtrl', function($scope, $http, $location, $ionicLoading, $localstorage, $ionicPopup) {
     $ionicLoading.show();
     if ($localstorage.getObject('cookie')) {
       $http({
           method: 'post',
-          url: 'http://c.youngbin.xyz/grade/certificate',
-          //url: 'https://f.youngbin.xyz/grade/certificate',
+          //url: 'http://c.youngbin.xyz/grade/certificate',
+          url: 'https://c.youngbin.xyz/foressst/grade/certificate',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -835,10 +676,7 @@ angular.module('starter.controllers', ['starter.services'])
           $localstorage.setObject('print', data);
           $scope.print = $localstorage.getObject('print').details;
           $scope.sum = $localstorage.getObject('print').details[data.details.length - 1];
-          // 리턴
-          //console.log(data)
           var count = $localstorage.getObject('print').details.length
-          //console.log(count)
           if (count == 0) {
             $ionicLoading.hide();
             var alertPopup = $ionicPopup.alert({
@@ -899,47 +737,17 @@ angular.module('starter.controllers', ['starter.services'])
       $location.path('/login');
     };
   })
-
   // 학사 일정 조회
-  .controller('calendarCtrl', function($scope, $http, $location, $ionicLoading, $localstorage) {
+  .controller('calendarCtrl', function($scope, $http, $location, $ionicLoading, $localstorage, $ionicPopup) {
     var date = new Date();
     var month = date.getMonth() + 1;
     var year = date.getFullYear();
-
     $ionicLoading.show();
     if ($localstorage.getObject('cookie')) {
-
-      /*반복문 적용 연습*/
-
-      /*for(var m = 1; m<13; m++) {
-        console.log(m)
-        $http({
-            method: 'post',
-            url: 'http://c.youngbin.xyz/life/schedules',
-            //url: 'https://f.youngbin.xyz/page/calendar',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            data: ({
-              year: year,
-              month: m,
-              cookie: $localstorage.getObject('cookie')
-            })
-          })
-          .success(function(data, status, headers, config) {
-            $ionicLoading.hide();
-            console.log(data);
-            $localstorage.setObject('calendar1', data);
-            $scope.calendar1 = $localstorage.getObject('calendar1').calendar;
-            $scope.month = m
-          })
-      }*/
-
-      //1월
       $http({
           method: 'post',
-          url: 'http://c.youngbin.xyz/life/schedules',
-          //url: 'https://f.youngbin.xyz/page/calendar',
+          //url: 'http://c.youngbin.xyz/life/schedules',
+          url: 'https://c.youngbin.xyz/foressst/life/schedules',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -951,16 +759,14 @@ angular.module('starter.controllers', ['starter.services'])
         })
         .success(function(data, status, headers, config) {
           $ionicLoading.hide();
-          //console.log(data);
           $localstorage.setObject('calendar1', data);
           $scope.calendar1 = $localstorage.getObject('calendar1').calendar;
           $scope.month1 = month % 12
         })
-      //2월
       $http({
           method: 'post',
-          url: 'http://c.youngbin.xyz/life/schedules',
-          //url: 'https://f.youngbin.xyz/page/calendar',
+          //url: 'http://c.youngbin.xyz/life/schedules',
+          url: 'https://c.youngbin.xyz/foressst/life/schedules',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -972,16 +778,14 @@ angular.module('starter.controllers', ['starter.services'])
         })
         .success(function(data, status, headers, config) {
           $ionicLoading.hide();
-          //console.log(data);
           $localstorage.setObject('calendar2', data);
           $scope.calendar2 = $localstorage.getObject('calendar2').calendar;
           $scope.month2 = (month + 1) % 12
         })
-      //3월
       $http({
           method: 'post',
-          url: 'http://c.youngbin.xyz/life/schedules',
-          //url: 'https://f.youngbin.xyz/page/calendar',
+          //url: 'http://c.youngbin.xyz/life/schedules',
+          url: 'https://c.youngbin.xyz/foressst/life/schedules',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -993,12 +797,10 @@ angular.module('starter.controllers', ['starter.services'])
         })
         .success(function(data, status, headers, config) {
           $ionicLoading.hide();
-          //console.log(data);
           $localstorage.setObject('calendar3', data);
           $scope.calendar3 = $localstorage.getObject('calendar3').calendar;
           $scope.month3 = (month + 2) % 12
         })
-
         .error(function(data, status, headers, config) {
           $ionicLoading.hide();
           var alertPopup = $ionicPopup.alert({
@@ -1016,52 +818,14 @@ angular.module('starter.controllers', ['starter.services'])
       $location.path('/login');
     };
   })
-
-  //학식 조회 - 식단표 조회
-  /*.controller('foodCtrl', function($scope, $http, $location, $ionicLoading, $localstorage) {
-      $ionicLoading.show();
-      if($localstorage.getObject('cookie')){
-        $http({
-          method: 'get',
-          url: 'http://localhost:3000/life/meal/urls'
-          //url: 'http://c.youngbin.xyz/page/calendar',
-          //url: 'https://f.youngbin.xyz/page/calendar',
-          headers: {'Content-Type': 'application/json'}
-        })
-        .success(function(data, status, headers, config){
-          $ionicLoading.hide();
-          $localstorage.setObject('food', data);
-          //$scope.calendar = $localstorage.getObject('food').calendar;
-          console.log(data);
-          // 리턴
-        })
-        .error(function(data, status, headers, config){
-          $ionicLoading.hide();
-          var alertPopup = $ionicPopup.alert({
-              title: 'Warning Message',
-              template: '잠시후 다시 시도해 주세요.'
-              });
-          $location.path('/login');
-      })
-      } else {
-        $ionicLoading.hide();
-        var alertPopup = $ionicPopup.alert({
-              title: 'Warning Message',
-              template: '로그인 먼저 해주세요.'
-              });
-        $location.path('/login');
-      };
-    })
-  */
-
   //상담 이력 조회
   .controller('consultingCtrl', function($scope, $http, $location, $ionicLoading, $localstorage, $ionicPopup) {
     $ionicLoading.show();
     if ($localstorage.getObject('cookie')) {
       $http({
           method: 'post',
-          url: 'http://c.youngbin.xyz/life/consulting',
-          //url: 'https://f.youngbin.xyz/life/consulting',
+          //url: 'http://c.youngbin.xyz/life/consulting',
+          url: 'https://c.youngbin.xyz/foressst/life/consulting',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -1074,7 +838,6 @@ angular.module('starter.controllers', ['starter.services'])
           $localstorage.setObject('consulting', data);
           $scope.adviser = $localstorage.getObject('consulting').adviser;
           $scope.history = $localstorage.getObject('consulting').history;
-          // 리턴
         })
         .error(function(data, status, headers, config) {
           $ionicLoading.hide();
@@ -1082,7 +845,7 @@ angular.module('starter.controllers', ['starter.services'])
             title: 'Warning Message',
             template: '잠시후 다시 시도해 주세요.'
           });
-          //$location.path('/login');
+          $location.path('/login');
         })
     } else {
       $ionicLoading.hide();
@@ -1090,6 +853,6 @@ angular.module('starter.controllers', ['starter.services'])
         title: 'Warning Message',
         template: '로그인 먼저 해주세요.'
       });
-      //$location.path('/login');
+      $location.path('/login');
     };
   })
