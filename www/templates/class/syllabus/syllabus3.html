@@ -1,140 +1,90 @@
-<ion-view view-title="강의 계획서" hide-back-button="true">
+<ion-view view-title="신 강의 계획서 조회" hide-back-button="true">
 
   <ion-nav-buttons side="left">
-    <a class="button button-clear" href="#/app/syllabus" nav-clear><i class="icon ion-ios-arrow-left"></i></a>
+    <a class="button button-clear" href="#/app/class" nav-clear><i class="icon ion-ios-arrow-left"></i></a>
   </ion-nav-buttons>
 
-  <ion-content>
+  <ion-content class="padding">
 
-        <!--1번 페이지-->
-          <div class="bar bar-dark">
-            <h1 class="title">강의 기본정보</h1>
-          </div>
-          <div class="item item-divider"> 강의 기본정보 </div>
-          <div class="has-header">
-            <div class="row">
-              <div class="col" style="FONT-WEIGHT: bold;"> {{about.subject}} </div>
-            </div>
-            <div class="row">
-              <div class="col"> 연도-학기 </div>
-              <div class="col"> {{about.year_semester}} </div>
-            </div>
-            <div class="row">
-              <div class="col"> 이수구분 </div>
-              <div class="col"> {{about.type}} </div>
-            </div>
-            <div class="row">
-              <div class="col"> 학점(이론-실습) </div>
-              <div class="col"> {{about.credits}} </div>
-            </div>
-            <div class="row">
-              <div class="col"> 담당교수 </div>
-              <div class="col"> {{about.profesor}} </div>
-            </div>
-            <div class="row">
-              <div class="col"> 강의실 </div>
-              <div class="col"> {{about.location}} </div>
-            </div>
-            <div class="row">
-              <div class="col"> 강의시간 </div>
-              <div class="col"> {{about.time}} </div>
-            </div>
-            <div class="row">
-              <div class="col"> 등급제 </div>
-              <div class="col"> {{about.grade_type}} </div>
-            </div>
-          </div>
-        </div>
-        <!--2번 페이지-->
-          <div class="bar bar-dark">
-            <h1 class="title">강의정보</h1>
-          </div>
-          <div class="item item-divider"> 강의 기본정보 </div>
-          <div class="has-header">
-            <div class="row">
-              <div class="col"> 교수님 연구실 </div>
-              <div class="col"> {{info.lab}} </div>
-            </div>
-            <div class="row">
-              <div class="col"> 연구실 전화번호 </div>
-              <div class="col"> <a href="tel:{{info.lab_phone}}" class="button button-positive"> {{info.lab_phone}}  <i class="icon ion-ios-telephone"> </i> </a> </div>
-              <!--<div class="col"> <a href="sms:{{info.lab_phone}}" class="button button-positive"> {{info.lab_phone}}  <i class="icon ion-ios-telephone"> </i> </a> </div>-->
-            </div>
-            <div class="row">
-              <div class="col"> e-mail </div>
-              <div class="col"> <a href="mailto:{{info.email}}" class="button button-positive"> {{info.email}}  <i class="icon ion-ios-email"> </i> </a> </div>
-            </div>
-            <div class="row">
-              <div class="col"> 연락처 </div>
-              <!--<div class="col"> <a href="tel:{{info.phone}}" class="button button-positive"> {{info.lab_phone}}  <i class="icon ion-ios-telephone"> </i> </a> </div>-->
-              <div class="col"> <a href="sms:{{info.phone}}" class="button button-positive"> {{info.phone}}  <i class="icon ion-ios-telephone"> </i> </a> </div>
-            </div>
-            <div class="row">
-              <div class="col"> 홈페이지 </div>
-              <div class="col"> {{info.homepage}} </div>
-            </div>
-            <div class="row">
-              <div class="col"> 면담 가능시간 </div>
-              <div class="col"> {{info.available_time}} </div>
-            </div>
-            <div class="row">
-              <div class="col" style="FONT-WEIGHT: bold;"> 수업목표 </div>
-            </div>
-            <div class="row">
-              <div class="col"> {{info.goal}} </div>
-            </div>
-            <div class="row">
-              <div class="col" style="FONT-WEIGHT: bold;"> 수업방식 </div>
-            </div>
-            <div class="row">
-              <div class="col" style="FONT-WEIGHT: bold;"> 개요 </div>
-              <div class="col col-80"> {{info.lecture_manner.outline}} </div>
-            </div>
-            <div class="row">
-              <div class="col" style="FONT-WEIGHT: bold;"> 방식 </div>
-              <div class="col col-80"> {{info.lecture_manner.manner}} </div>
-            </div>
-            <div class="row">
-              <div class="col" style="FONT-WEIGHT: bold;"> 기자재 </div>
-              <div class="col col-80"> {{info.lecture_manner.devices}} </div>
-            </div>
-            <div class="row">
-              <div class="col" style="FONT-WEIGHT: bold;"> 평가 기준 </div>
-            </div>
-            <div class="row">
-              <div class="col"> {{info.evaluation_criteria}} </div>
-            </div>
-            <div class="row">
-              <div class="col" style="FONT-WEIGHT: bold;"> 주교재와 참고문헌 </div>
-            </div>
-            <div class="row">
-              <div class="col"> {{info.materials}} </div>
-            </div>
-            <div class="row">
-              <div class="col" style="FONT-WEIGHT: bold;"> 유의사항 </div>
-            </div>
-            <div class="row">
-              <div class="col"> {{info.note}} </div>
-            </div>
-          </div>
-        </div>
-        <!--3번 페이지-->
-          <div class="bar bar-dark">
-            <h1 class="title">주별진도</h1>
-          </div>
-          <div class="item item-divider"> 강의 기본정보 </div>
-          <div class="has-header">
+    <div class="row responsive-sm padding remvoeBP">
+      <div class="col">
+  		  <div class="list list-inset removePM">
 
-            <div class="row" ng-repeat="detail in details">
-              <div class="row">
-                <div class="col"> {{detail.week}} <br> {{detail.details}} </div>
-              </div>
-            </div>
+          <div class="list">
+            <!-- 선택 메뉴-->
+            <label class="item item-input item-select">
+              <div class="input-label"> 연도 </div>
+                <select ng-model="data.year">
+                  <option value="2017"> 2017 </option>
+                </select>
+            </label>
 
+            <label class="item item-input item-select">
+              <div class="input-label"> 학기 </div>
+                <select ng-model="data.semester">
+                  <option value="Z0101"> 1학기 </option>
+                  <option value="Z0102"> 2학기 </option>
+                  <option value="Z0103"> 여름학기 </option>
+                  <option value="Z0104"> 겨울학기 </option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+              <div class="input-label"> 구분 </div>
+                <select ng-model="data.type">
+                  <option value="GYOSU"> 교수명 </option>
+                  <option value="GWAMOG"> 과목명 </option>
+                  <option value="HagbuNm"> 학부(과)명 </option>
+                </select>
+            </label>
+
+            <label class="item item-input">
+              <input type="search" ng-model="data.keyword" placeholder="검색어" >
+            </label>
           </div>
-        </div>
-
+  	    </div>
+        <!--angular js -->
+        <div class="submit"><button class="button button-block button-balanced" ng-click="syllabus(data);" > 검색 </button>  </div>
       </div>
-    </ion-scroll>
+    </div>
+
+    <div class="list"><!-- json 값 출력-->
+      <i class="item" ng-repeat="syllabus in syllabuss">
+        <div class="row">
+          <a class="col" style="FONT-WEIGHT: bold;"> {{syllabus.GwamogKorNm}} </a>
+        </div>
+        <div class="row">
+          <a class="col" style="FONT-WEIGHT: bold;"> {{syllabus.GwamogEngNm}} </a>
+        </div>
+        <div class="row">
+          <div class="col" style="FONT-WEIGHT: bold;"> {{syllabus.GaeseolDaehagNm}}_{{syllabus.GaeseolSosogNm}} </div>
+        </div>
+        <div class="row">
+          <div class="col" style="FONT-WEIGHT: bold;"> 구분 </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> {{syllabus.IsuGbNm}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> 분반 </div>
+          <div class="col"> {{syllabus.Bunban}} </div>
+        </div>
+        <div class="row">
+          <div class="col"> 학점 </div>
+          <div class="col"> {{syllabus.Hagjeom}}학점 </div>
+        </div>
+        <div class="row">
+          <div class="col"> 교수 </div>
+          <div class="col"> {{syllabus.ProfKorNm}} </div>
+        </div>
+        <div class="row">
+          <div class="col" style="FONT-WEIGHT: bold;"> 계획서 공개 </div>
+          <div class="col" style="FONT-WEIGHT: bold;"> {{syllabus.SueobGyehoegYn}} </div>
+        </div>
+        <a class="item item-icon-left" ng-click="syllabus3({{$index}})">
+          <i class="icon ion-ios-list"></i> 강의 계획서
+        </a>
+      </i>
+    </div>
+
   </ion-content>
+
 </ion-view>

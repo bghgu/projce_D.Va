@@ -121,7 +121,7 @@
     pointer-events: none; }
 .popup-open .popup-backdrop, .popup-open .popup {
     pointer-events: auto; }
-    
+
 /**
  * Loading
  * --------------------------------------------------
@@ -174,9 +174,9 @@
  * app-logo
  * --------------------------------------------------
  */
-.app-logo { 
-    max-width:120px; 
-    margin:auto; 
+.app-logo {
+    max-width:120px;
+    margin:auto;
     background-repeat:no-repeat;
     background-position:center; }
 
@@ -545,3 +545,6 @@ tour-view .icon-slide {
   padding-right: 1px;
   padding-left: 1px; }
 
+.bar-sakura {
+  background-color: #ffc6c3;
+}

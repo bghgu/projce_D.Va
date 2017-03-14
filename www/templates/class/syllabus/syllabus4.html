@@ -1,0 +1,156 @@
+<ion-view view-title="강의 계획서" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <a class="button button-clear" href="#/app/syllabus3" nav-clear><i class="icon ion-ios-arrow-left"></i></a>
+  </ion-nav-buttons>
+
+  <ion-content>
+
+    <!--1번 페이지-->
+    <div class="bar bar-dark">
+      <h1 class="title">강의 정보</h1>
+    </div>
+    <div class="item item-divider"> 강의 기본정보 </div>
+    <div class="has-header">
+      <div class="row">
+        <div class="col" style="FONT-WEIGHT: bold;"> {{syllabuss.GwamogKorNm}} </div>
+      </div>
+      <div class="row">
+        <div class="col"> 연도-학기 </div>
+        <div class="col"> {{syllabuss.Yy}} - {{syllabuss.HaggiNm}} </div>
+      </div>
+      <div class="row">
+        <div class="col"> 이수구분 </div>
+        <div class="col"> {{syllabuss.IsuGbNm}} </div>
+      </div>
+      <div class="row">
+        <div class="col"> 학점(이론-실습) </div>
+        <div class="col"> {{syllabuss.IronSisu}} </div>
+      </div>
+      <div class="row">
+        <div class="col"> 담당교수 </div>
+        <div class="col"> {{syllabuss.ProfKorNm}} </div>
+      </div>
+      <div class="row">
+        <div class="col"> 수강가능학년 </div>
+        <div class="col"> {{syl1}}학년 </div>
+      </div>
+      <div class="row">
+        <div class="col"> 성적부여방식 </div>
+        <div class="col"> {{syllabuss.SeongjeogGbNm}}({{syllabuss.SjSanchulGbNm}}) </div>
+      </div>
+      <div class="row">
+        <div class="col"> 강의실 / 수업시간</div>
+      </div>
+      <div class="row">
+        <div class="col"> {{syllabuss.Times}} </div>
+      </div>
+    </div>
+    </div>
+    <!--2번 페이지-->
+    <div class="bar bar-dark">
+      <h1 class="title">담당 교수 정보</h1>
+    </div>
+    <div class="item item-divider"> 강의 기본정보 </div>
+    <div class="has-header">
+      <div class="row">
+        <div class="col"> 교수명 </div>
+        <div class="col"> {{syllabuss.ProfKorNm}} </div>
+      </div>
+      <div class="row">
+        <div class="col"> 교수님 연구실 </div>
+        <div class="col"> {{lab}} </div>
+      </div>
+      <div class="row">
+        <div class="col"> 연구실 전화번호 </div>
+        <div class="col"> <a href="tel:{{tel}}" class="button button-positive"> {{tel}} </a> </div>
+        <!--<div class="col"> <a href="sms:{{syllabuss.lab_phone}}" class="button button-positive"> {{syllabuss.lab_phone}}  <i class="icon ion-ios-telephone"> </i> </a> </div>-->
+      </div>
+      <div class="row">
+        <div class="col"> e-mail </div>
+        <div class="col"> <a href="mailto:{{email}}" class="button button-positive"> {{email}} </a> </div>
+      </div>
+      <div class="row">
+        <div class="col"> 연락처 </div>
+        <!--<div class="col"> <a href="tel:{{syllabuss.phone}}" class="button button-positive"> {{syllabuss.lab_phone}}  <i class="icon ion-ios-telephone"> </i> </a> </div>-->
+        <div class="col"> <a href="sms:{{phone}}" class="button button-positive"> {{phone}} </a> </div>
+      </div>
+      <div class="row">
+        <div class="col"> 면담 가능시간 </div>
+        <div class="col"> {{consulting}} </div>
+      </div>
+    </div>
+    <div class="bar bar-dark">
+      <h1 class="title">과목 정보</h1>
+    </div>
+    <div class="item item-divider"> 강의 기본정보 </div>
+    <div class="has-header">
+      <div class="row">
+        <div class="col" style="FONT-WEIGHT: bold;"> 수업목표 </div>
+      </div>
+      <div class="row">
+        <div class="col"> {{Outline}} </div>
+      </div>
+      <div class="row">
+        <div class="col" style="FONT-WEIGHT: bold;"> 학습 목표 </div>
+      </div>
+      <div class="row">
+        <div class="col"> {{learning}} </div>
+      </div>
+      <div class="row">
+        <div class="col" style="FONT-WEIGHT: bold;"> 수업내용 </div>
+      </div>
+      <div class="row">
+        <div class="col"> {{contents}} </div>
+      </div>
+      <div class="row">
+        <div class="col" style="FONT-WEIGHT: bold;"> 선수 과목 </div>
+      </div>
+      <div class="row">
+        <div class="col"> {{first}} </div>
+      </div>
+      <div class="row">
+        <div class="col" style="FONT-WEIGHT: bold;"> 교재와 참고문헌 </div>
+      </div>
+      <div class="row">
+        <div class="col"> {{book}} </div>
+      </div>
+      <div class="row">
+        <div class="col" style="FONT-WEIGHT: bold;"> 수업 진행 방법 </div>
+      </div>
+      <div class="row">
+        <div class="col"> {{proceed}} </div>
+      </div>
+      <div class="row">
+        <div class="col" style="FONT-WEIGHT: bold;"> 참고 사항 </div>
+      </div>
+      <div class="row">
+        <div class="col"> {{note}} </div>
+      </div>
+      <div class="row">
+        <div class="col" style="FONT-WEIGHT: bold;"> 평가 방법 </div>
+      </div>
+      <div class="row">
+        <div class="col"> {{assessment}} </div>
+      </div>
+    </div>
+    <!--3번 페이지-->
+    <div class="bar bar-dark">
+      <h1 class="title">주별진도</h1>
+    </div>
+    <div class="item item-divider"> 강의 기본정보 </div>
+    <div class="has-header">
+
+      <div class="row" ng-repeat="detail in details">
+        <div class="row">
+          <div class="col"> {{detail.week}} <br> {{detail.details}} </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+    </div>
+    </ion-scroll>
+  </ion-content>
+</ion-view>

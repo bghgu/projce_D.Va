@@ -6,49 +6,90 @@
   </ion-nav-buttons>
 
   <ion-content>
+    <!--
+    <div class="row" style="text-align:center">
+      <div class="col col-20" style="border: 2px solid;"> 월요일
+        <div class="row" style="border: 2px solid;" ng-repeat="time in timetables_mon">
+          {{time.time}} <br> {{time.subject}} <br> {{time.location}}
+        </div>
+      </div>
+      <div class="col col-20" style="border: 2px solid;"> 화요일
+        <div class="row">
+
+        </div>
+      </div>
+      <div class="col col-20" style="border: 2px solid;"> 수요일
+        <div class="row">
+
+        </div>
+      </div>
+      <div class="col col-20" style="border: 2px solid;"> 목요일
+        <div class="row">
+
+        </div>
+      </div>
+      <div class="col col-20" style="border: 2px solid;"> 금요일
+        <div class="row">
+
+        </div>
+      </div>
+    </div> -->
+
+
+
     <!--월요일 부분-->
-    <div class="row">
-      <h3 class="col"> 월요일 </h3>
-    </div>
+    <div style="border: 2px solid;">
+      <div class="row">
+        <h3 class="col"> 월요일 </h3>
+      </div>
       <div class="col" ng-repeat="time in timetables_mon">
         <!--json값 출력-->
         <tr>
-          <td>{{time.time}} / {{time.subject}} / {{time.tutor}} /  {{time.location}}</td>
+          <td>{{time.time}} / {{time.subject}} / {{time.location}}</td>
         </tr>
       </div>
-    <div class="row">
-      <h3 class="col"> 화요일 </h3>
     </div>
+
+    <div style="border: 2px solid;">
+      <div class="row">
+        <h3 class="col"> 화요일 </h3>
+      </div>
       <div class="col" ng-repeat="time in timetables_tues">
         <tr>
-          <td>{{time.time}} / {{time.subject}} / {{time.tutor}} /  {{time.location}}</td>
+          <td>{{time.time}} / {{time.subject}} / {{time.location}}</td>
         </tr>
       </div>
-      <div class="row">
-      <h3 class="col"> 수요일 </h3>
     </div>
+    <div style="border: 2px solid;">
+      <div class="row">
+        <h3 class="col"> 수요일 </h3>
+      </div>
       <div class="col" ng-repeat="time in timetables_wedns">
         <tr>
-          <td>{{time.time}} / {{time.subject}} / {{time.tutor}} /  {{time.location}}</td>
+          <td>{{time.time}} / {{time.subject}} / {{time.location}}</td>
         </tr>
       </div>
-    <div class="row">
-      <h3 class="col"> 목요일 </h3>
     </div>
+    <div style="border: 2px solid;">
+      <div class="row">
+        <h3 class="col"> 목요일 </h3>
+      </div>
       <div class="col" ng-repeat="time in timetables_thurs">
         <tr>
-          <td>{{time.time}} / {{time.subject}} / {{time.tutor}} /  {{time.location}}</td>
+          <td>{{time.time}} / {{time.subject}} / {{time.location}}</td>
         </tr>
       </div>
-    <div class="row">
-      <h3 class="col"> 금요일 </h3>
     </div>
+    <div style="border: 2px solid;">
+      <div class="row">
+        <h3 class="col"> 금요일 </h3>
+      </div>
       <div class="col" ng-repeat="time in timetables_fri">
         <tr>
-          <td>{{time.time}} / {{time.subject}} / {{time.tutor}} /  {{time.location}}</td>
+          <td>{{time.time}} / {{time.subject}} / {{time.location}}</td>
         </tr>
       </div>
-
+    </div>
   </ion-content>
-  
+
 </ion-view>
