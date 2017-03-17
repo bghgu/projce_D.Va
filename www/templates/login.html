@@ -1,4 +1,4 @@
-<ion-view view-title="Welcome to foressst" id="login" hide-nav-bar="true">
+<ion-view view-title="Welcome to foressst" class="loginBg" id="login" hide-nav-bar="true">
 
 <!--메인 컨텐츠-->
  <ion-content class="padding">
@@ -9,20 +9,20 @@
 
 			<!--<div class="app-logo"><img src="img/skhu.jpg"></div>
 			<h1 style="text-align:center">foressst</h1>-->
-			<div class="app-logo"><img src="img/skhu.jpg"></div>
+			<div class="app-logo"><img src="img/skhu.jpg" ></div>
 			<h1 style="text-align:center">foressst</h1>
 
 
-			<div class="list list-inset removePM">
+			<div class="list list-inset removePM" style="opacity: 0.5;">
 			  <label class="item item-input"><input type="tel" ng-model="user.username" placeholder="Id" > </label>
 			  <label class="item item-input"><input type="password" ng-model="user.password" placeholder="Password" > </label>
 			</div>
 
-			<div class="loginButton"><button class="button ion-unlocked button-block button-balanced" ng-click="login(user);" > Login </button>  </div>
+			<div class="loginButton" style="opacity: 0.5;"><button class="button ion-unlocked button-block button-stable" ng-click="login(user);" > Login </button>  </div>
 
-			<p style="TEXT-ALIGN: center;"> forest id와 pw로 로그인 하세요. </p>
-      <p style="TEXT-ALIGN: center;"> 최초 1회 로그인시 자동 로그인됩니다. </p>
-      <p style="TEXT-ALIGN: center;"> Copyright (c) 2016-2017 SSS All rights reserved. </p>
+			<p style="TEXT-ALIGN: center; color:gray"> forest id와 pw로 로그인 하세요. </p>
+      <p style="TEXT-ALIGN: center; color:gray"> 최초 1회 로그인시 자동 로그인됩니다. </p>
+      <p style="TEXT-ALIGN: center; color:gray"> Copyright (c) 2016-2017 SSS All rights reserved. </p>
 
 	  </div>
   </div>

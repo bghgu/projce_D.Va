@@ -1,5 +1,16 @@
 .ion-ios-arrow-left:before { content: "\f3d2"; }
-
+.loginBg {
+    background: url(../img/bg2.jpg);
+    background-size:cover;
+    /*background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 80%;
+    height: 246px;
+    margin: auto;
+    z-index: 2;
+    position: relative;*/
+}
 /*
  * Popups
  * --------------------------------------------------
@@ -323,6 +334,15 @@
   flex: 0 0 10%;
   max-width: 10%; }
 
+  .col-15 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 15%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 15%;
+    -ms-flex: 0 0 15%;
+    flex: 0 0 15%;
+    max-width: 15%; }
+
 .col-20 {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 20%;
@@ -340,6 +360,15 @@
   -ms-flex: 0 0 25%;
   flex: 0 0 25%;
   max-width: 25%; }
+
+  .col-30 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 30%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 30%;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 30%; }
 
 .col-33 {
   -webkit-box-flex: 0;

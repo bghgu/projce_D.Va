@@ -1,83 +1,238 @@
-<ion-view view-title="구 강의 계획서 조회" hide-back-button="true">
-
-  <ion-nav-buttons side="left">
-    <a class="button button-clear" href="#/app/class" nav-clear><i class="icon ion-ios-arrow-left"></i></a>
-  </ion-nav-buttons>
-
-  <ion-content class="padding">
-
-    <div ng-controller="SSEA104 as con" ng-init="con.initialize();">
-
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="form" ng-enter="con.getList()">
-            <div class="form-group col-sm-3">
-              <search:header for="Yy">년도</search:header>
-              <search:yy ng-model="con.params.Yy"></search:yy>
-            </div>
-            <div class="form-group col-sm-3">
-              <search:header for="Haggi">학기</search:header>
-              <sam:forestCode ng-model="con.params.Haggi" group="CZ01"></sam:forestCode>
-            </div>
-            <div class="form-group col-sm-3">
-              <search:text name="GwamogParam" header="과목" ng-model="con.params.GwamogParam"></search:text>
-            </div>
-            <div class="form-group col-sm-3">
-              <search:text name="SosogParam" header="개설소속" ng-model="con.params.SosogParam"></search:text>
-            </div>
-
-            <div class="form-group col-sm-3">
-              <search:text name="SosogParamProfParam" header="대표교수" ng-model="con.params.ProfParam"></search:text>
-            </div>
-          </div>
-
-          <div class="col-sm-3 pull-right text-right">
-            <search:go ng-click="con.getList();"></search:go>
-          </div>
+<div class="voffset2">
+            <label class="label label-default">주별 학습목표와 학습내용</label>
+            <table class="table table-bordered">
+                <colgroup>
+                    <col class="col-md-1">
+                    <col class="col-md-5">
+                    <col class="col-md-2">
+                    <col class="col-md-4">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th class="center-text">회차</th>
+                        <th class="center-text">학습목표와 학습내용</th>
+                        <th class="center-text">교수방법</th>
+                        <th class="center-text">준비사항</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ngRepeat: s in con.plan['주별내용'] track by s.K -->
+                    <tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            1
+                        </td>
+                        <td class="planItem ng-binding">과목 소개</td>
+                        <td class="planItem ng-binding">강의</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr>
+                    <!-- end ngRepeat: s in con.plan['주별내용'] track by s.K -->
+                    <tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            2
+                        </td>
+                        <td class="planItem ng-binding">C 언어 소개, 프로그램 기본구성</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding">교재</td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            3
+                        </td>
+                        <td class="planItem ng-binding">변수와 연산자</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding">온라인 강의로 예습한다.
+실습 과제를 풀이하여 제출한다.
+교재를 지참한다.</td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            4
+                        </td>
+                        <td class="planItem ng-binding">변수와 연산자</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            5
+                        </td>
+                        <td class="planItem ng-binding">변수와 연산자</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            6
+                        </td>
+                        <td class="planItem ng-binding">데이터 표현방식의 이해</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            7
+                        </td>
+                        <td class="planItem ng-binding">데이터 표현방식의 이해</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            8
+                        </td>
+                        <td class="planItem ng-binding">상수와 기본 자료형</td>
+                        <td class="planItem ng-binding">시험</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            9
+                        </td>
+                        <td class="planItem ng-binding">상수와 기본 자료형</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            10
+                        </td>
+                        <td class="planItem ng-binding">printf 함수와 scanf 함수</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            11
+                        </td>
+                        <td class="planItem ng-binding">printf 함수와 scanf 함수</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            12
+                        </td>
+                        <td class="planItem ng-binding">반복문</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            13
+                        </td>
+                        <td class="planItem ng-binding">반복문</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            14
+                        </td>
+                        <td class="planItem ng-binding">조건에 따른 흐름의 분기</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            15
+                        </td>
+                        <td class="planItem ng-binding">중간고사</td>
+                        <td class="planItem ng-binding">시험</td>
+                        <td class="planItem ng-binding">두번의 수업을 연강으로 잡아 시험을 실시한다.</td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            16
+                        </td>
+                        <td class="planItem ng-binding">중간고사</td>
+                        <td class="planItem ng-binding">시험</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            17
+                        </td>
+                        <td class="planItem ng-binding">조건에 따른 흐름의 분기</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            18
+                        </td>
+                        <td class="planItem ng-binding">조건에 따른 흐름의 분기</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            19
+                        </td>
+                        <td class="planItem ng-binding">함수</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            20
+                        </td>
+                        <td class="planItem ng-binding">함수</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            21
+                        </td>
+                        <td class="planItem ng-binding">함수</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            22
+                        </td>
+                        <td class="planItem ng-binding">1차원 배열</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            23
+                        </td>
+                        <td class="planItem ng-binding">1차원 배열</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            24
+                        </td>
+                        <td class="planItem ng-binding">1차원 배열</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            25
+                        </td>
+                        <td class="planItem ng-binding">간단한 포인터</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            26
+                        </td>
+                        <td class="planItem ng-binding">간단한 포인터</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            27
+                        </td>
+                        <td class="planItem ng-binding">간단한 포인터</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            28
+                        </td>
+                        <td class="planItem ng-binding">간단한 포인터</td>
+                        <td class="planItem ng-binding">강의/실습</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            29
+                        </td>
+                        <td class="planItem ng-binding">기말고사</td>
+                        <td class="planItem ng-binding">시험</td>
+                        <td class="planItem ng-binding">두번의 수업을 연강으로 잡아 시험을 실시한다.</td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K --><tr ng-repeat="s in con.plan['주별내용'] track by s.K" class="ng-scope">
+                        <td class="ng-binding">
+                            30
+                        </td>
+                        <td class="planItem ng-binding">기말고사</td>
+                        <td class="planItem ng-binding">시험</td>
+                        <td class="planItem ng-binding"></td>
+                    </tr><!-- end ngRepeat: s in con.plan['주별내용'] track by s.K -->
+                    <!-- ngIf: con.plan['주별내용'].length == 0 -->
+                </tbody>
+            </table>
         </div>
-      </div>
-
-      <div>
-        <table id="tblList" class="table table-bordered table-hover">
-          <colgroup>
-            <col style="width:10%;" />
-            <col style="width:5%;" />
-            <col style="width:30%;" />
-            <col />
-            <col style="width:20%;" />
-            <col style="width:5%;" />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>과목코드</th>
-              <th>분반</th>
-              <th>과목명</th>
-              <th>소속</th>
-              <th>담당교수</th>
-              <th>작성</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="s in con.p.p1.data" ng-class="{ 'pointer' : s.PlanIdx != null && s.SueobGyehoegYn == 'Y'}" ng-click="s.PlanIdx != null && s.SueobGyehoegYn == 'Y' ? con.openDetail({ActionMode: 'R', Yy: s.Yy, Haggi: s.Haggi, GwamogCd : s.GwamogCd, Bunban : s.Bunban }) : ''">
-              <td>{{ s.GwamogCd }}</td>
-              <td>{{ s.Bunban }}</td>
-              <td>{{ s.GwamogKorNm }}</td>
-              <td>
-                {{ s.GaeseolDaehagNm }} {{ s.GaeseolHagbuNm }} <span ng-if="s.GaeseolHagbuNm != s.GaeseolSosogNm">{{ s.GaeseolSosogNm }}</span>
-              </td>
-              <td> <span ng-if="s.ProfNo">{{ s.ProfKorNm }} ({{ s.ProfNo }})</span></td>
-              <td>
-                <yn ng-if="s.SueobGyehoegYn == 'Y'" is-yn="true" text="s.PlanIdx != null"></yn>
-                <span ng-if="s.SueobGyehoegYn != 'Y'">해당없음</span>
-              </td>
-            </tr>
-            <tr table:empty="6" ng-model="con.p.p1"></tr>
-          </tbody>
-        </table>
-        <paging ng-model="con.p.p1"></paging>
-      </div>
-    </div>
-
-  </ion-content>
-
-</ion-view>

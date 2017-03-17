@@ -1,6 +1,6 @@
 {
   "name": "foressst",
-  "version": "1.2.2",
+  "version": "2.0.1",
   "description": "foressst: An Ionic project_D.Va",
   "dependencies": {
     "gulp": "^3.5.6",
