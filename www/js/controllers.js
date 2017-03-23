@@ -550,7 +550,7 @@ angular.module('starter.controllers', ['starter.services'])
           })
           .success(function(data, status, headers, config) {
             $ionicLoading.hide();
-            //console.log(data);
+            console.log(data);
             $localstorage.setObject('syllabus4', data);
             $ionicPopup.alert({
               title: '강의계획서',
