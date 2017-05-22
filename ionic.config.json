@@ -2,5 +2,6 @@
   "name": "foressst",
   "app_id": "47ab435e",
   "email": "ektmf1993@gmail.com",
-  "package_name": "net.skhu.sw"
+  "package_name": "net.skhu.sw",
+  "type": "ionic1"
 }

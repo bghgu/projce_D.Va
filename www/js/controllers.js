@@ -804,6 +804,7 @@ angular.module('starter.controllers', ['starter.services'])
         })
         .success(function(data, status, headers, config) {
           $ionicLoading.hide();
+          console.log(data);
           $localstorage.setObject('scholarshipList', data);
           $scope.scholarshipList = $localstorage.getObject('scholarshipList').scholarship_history;
           var count = $localstorage.getObject('scholarshipList').scholarship_history.length;
