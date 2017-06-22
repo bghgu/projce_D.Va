@@ -527,53 +527,61 @@ angular.module('starter.controllers', ['starter.services'])
   .controller('syllabus4Ctrl', function($scope, $http, $location, $ionicLoading, $localstorage, $ionicPopup) {
     //console.log($localstorage.getObject('syllabus_3').DAT[$localstorage.get('order')]);
     if ($localstorage.getObject('syllabus_3').DAT[$localstorage.get('order')]) {
-        $ionicLoading.show();
-        //////////////////////
-        $http({
-            method: 'post',
-            url: 'http://sam.skhu.ac.kr/SSE/SSEA1/SSEA102_Get강의계획서',
-            //url: 'http://sam.skhu.ac.kr/SSE/SSEA1/SSEA102_Get%EA%B0%95%EC%9D%98%EA%B3%84%ED%9A%8D%EC%84%9C',
-            headers: {
-              'Accept' : 'application/json, text/plain, */*',
-              'Content-Type': 'application/json; charset=UTF-8',
-              'RequestVerificationToken': '2aQ1qJb04Mvoy8ieL5D6YzrL23Kpuf6rYZpPqDpeW_-zIOr4tfXtCnBYVJ-o9KxrCR6wwdLRxMttCvOYYa4X6xQWyR6Va9PhWy2IfRwQD8s1:IM93q2FmFGHFUcqUrO9-rqmYStZ1YR9-0tfZacKQpYG_GtIu-7cXx8m1cQChCpOZrb4tRZNQ8eQiIiz70yfiCJOFFfbZ9nuj21VefGaqC6M1',
-              'X-Requested-With' : 'XMLHttpRequest'
-            },
-            data: ({
-              ActionMode: "R",
-              Yy: $localstorage.getObject('syllabus_3').DAT[$localstorage.get('order')].Yy,
-              Haggi: $localstorage.getObject('syllabus_3').DAT[$localstorage.get('order')].Haggi,
-              GwamogCd: $localstorage.getObject('syllabus_3').DAT[$localstorage.get('order')].GwamogCd,
-              Bunban: $localstorage.getObject('syllabus_3').DAT[$localstorage.get('order')].Bunban,
-              주별내용count :30
-            })
+      $ionicLoading.show();
+      //////////////////////
+      $http({
+          method: 'post',
+          url: 'http://sam.skhu.ac.kr/SSE/SSEA1/SSEA102_Get강의계획서',
+          //url: 'http://sam.skhu.ac.kr/SSE/SSEA1/SSEA102_Get%EA%B0%95%EC%9D%98%EA%B3%84%ED%9A%8D%EC%84%9C',
+          headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Accept-Encoding': 'gzip, deflate',
+            'Accept-Language': 'ko,ko-KR;q=0.8,en-US;q=0.6,en;q=0.4,zh-CN;q=0.2,zh;q=0.2',
+            'Connection': 'keep-alive',
+            'Content-Length': '104',
+            'Content-Type': 'application/json;charset=UTF-8',
+            'Host': 'sam.skhu.ac.kr',
+            'Origin': 'http://sam.skhu.ac.kr',
+            'Referer': 'http://sam.skhu.ac.kr/SSE/SSEA1/SSEA104',
+            'RequestVerificationToken': 'wnTSAvQ7qrlRDR-sGRi7X4SfdBOqys2oVWRmTCEHSV8_QKBcxNxOZfgHuUBrLH63qEqV4ODGA3Kx4ejvUyg9XrX6_I0p6TUHjqb8UgGoQp41:MafvteeyMdQTltn1973wrD5-Momsn_2UfB_apT0EAhD8wqM4dECoAWjH0KcxUpWns1yWeQRhY76kKZAFyZC2h-2UNWed4EuPaUpQRIdNUoM1',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.109 Safari/537.36',
+            'X-Requested-With': 'XMLHttpRequest',
+          },
+          data: ({
+            ActionMode: "R",
+            Yy: $localstorage.getObject('syllabus_3').DAT[$localstorage.get('order')].Yy,
+            Haggi: $localstorage.getObject('syllabus_3').DAT[$localstorage.get('order')].Haggi,
+            GwamogCd: $localstorage.getObject('syllabus_3').DAT[$localstorage.get('order')].GwamogCd,
+            Bunban: $localstorage.getObject('syllabus_3').DAT[$localstorage.get('order')].Bunban,
+            주별내용count: 30
           })
-          .success(function(data, status, headers, config) {
-            $ionicLoading.hide();
-            console.log(data);
-            $localstorage.setObject('syllabus4', data);
-            $ionicPopup.alert({
-              title: '강의계획서',
-              template: $localstorage.getObject('syllabus4').DAT.GwamogKorNm
-            });
-            $scope.syllabuss = $localstorage.getObject('syllabus4').DAT;
-            $scope.weekly = JSON.parse($localstorage.getObject('syllabus4').DAT.주별내용);
-            $scope.assessment = JSON.parse($localstorage.getObject('syllabus4').DAT.평가방법);
-            $scope.develop = JSON.parse($localstorage.getObject('syllabus4').DAT.개발가능역량);
-            ////////////
-            //console.log(JSON.parse($localstorage.getObject('syllabus4').DAT.주별내용));
-            //console.log(JSON.parse($localstorage.getObject('syllabus4').DAT.평가방법));
-            //console.log(JSON.parse($localstorage.getObject('syllabus4').DAT.개발가능역량));
-            //////////////
-          })
-          .error(function(data) {
-            $ionicLoading.hide();
-            var alertPopup = $ionicPopup.alert({
-              title: 'Warning Message',
-              template: '잠시후 다시 시도해 주세요.'
-            });
-            $location.path('/login');
+        })
+        .success(function(data, status, headers, config) {
+          $ionicLoading.hide();
+          console.log(data);
+          $localstorage.setObject('syllabus4', data);
+          $ionicPopup.alert({
+            title: '강의계획서',
+            template: $localstorage.getObject('syllabus4').DAT.GwamogKorNm
           });
+          $scope.syllabuss = $localstorage.getObject('syllabus4').DAT;
+          $scope.weekly = JSON.parse($localstorage.getObject('syllabus4').DAT.주별내용);
+          $scope.assessment = JSON.parse($localstorage.getObject('syllabus4').DAT.평가방법);
+          $scope.develop = JSON.parse($localstorage.getObject('syllabus4').DAT.개발가능역량);
+          ////////////
+          //console.log(JSON.parse($localstorage.getObject('syllabus4').DAT.주별내용));
+          //console.log(JSON.parse($localstorage.getObject('syllabus4').DAT.평가방법));
+          //console.log(JSON.parse($localstorage.getObject('syllabus4').DAT.개발가능역량));
+          //////////////
+        })
+        .error(function(data) {
+          $ionicLoading.hide();
+          var alertPopup = $ionicPopup.alert({
+            title: 'Warning Message',
+            template: '잠시후 다시 시도해 주세요.'
+          });
+          $location.path('/login');
+        });
     } else {
       $ionicLoading.hide();
       var alertPopup = $ionicPopup.alert({
