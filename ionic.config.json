@@ -3,5 +3,9 @@
   "app_id": "47ab435e",
   "email": "ektmf1993@gmail.com",
   "package_name": "net.skhu.sw",
-  "type": "ionic1"
+  "type": "ionic1",
+  "integrations": {
+    "cordova": {}
+  },
+  "watchPatterns": []
 }
