@@ -531,21 +531,16 @@ angular.module('starter.controllers', ['starter.services'])
       //////////////////////
       $http({
           method: 'post',
-          url: 'http://sam.skhu.ac.kr/SSE/SSEA1/SSEA102_Get강의계획서',
+          //url: 'http://sam.skhu.ac.kr/SSE/SSEA1/SSEA102_Get강의계획서',
           //url: 'http://sam.skhu.ac.kr/SSE/SSEA1/SSEA102_Get%EA%B0%95%EC%9D%98%EA%B3%84%ED%9A%8D%EC%84%9C',
+          url : 'http://sam.skhu.ac.kr/SSE/SSEA1/SSEA102_Get%EA%B0%95%EC%9D%98%EA%B3%84%ED%9A%8D%EC%84%9C',
           headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Accept-Encoding': 'gzip, deflate',
-            'Accept-Language': 'ko,ko-KR;q=0.8,en-US;q=0.6,en;q=0.4,zh-CN;q=0.2,zh;q=0.2',
-            'Connection': 'keep-alive',
-            'Content-Length': '104',
-            'Content-Type': 'application/json;charset=UTF-8',
-            'Host': 'sam.skhu.ac.kr',
-            'Origin': 'http://sam.skhu.ac.kr',
-            'Referer': 'http://sam.skhu.ac.kr/SSE/SSEA1/SSEA104',
-            'RequestVerificationToken': 'wnTSAvQ7qrlRDR-sGRi7X4SfdBOqys2oVWRmTCEHSV8_QKBcxNxOZfgHuUBrLH63qEqV4ODGA3Kx4ejvUyg9XrX6_I0p6TUHjqb8UgGoQp41:MafvteeyMdQTltn1973wrD5-Momsn_2UfB_apT0EAhD8wqM4dECoAWjH0KcxUpWns1yWeQRhY76kKZAFyZC2h-2UNWed4EuPaUpQRIdNUoM1',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.109 Safari/537.36',
-            'X-Requested-With': 'XMLHttpRequest',
+              'Accept': 'application/json, text/plain, */*',
+              'Accept-Language': 'ko',
+              'Cache-Control': 'no-cache',
+              'Content-Type': 'application/json; charset=utf-8',
+              'RequestVerificationToken': 'IShIqEhpBtsiW5g8I6n3qQ-2BSeo171xv-p5CYNWuFEMD_KpW2TZR014GmZhvim34SgMMQ4cSG4RHqSKTGMuMlcfLTx6Jbbgg9TEfN7UiFc1:z1T52Z4_toK5XzGHczlmirws8bxruktnVQbcnEFG9ycbk_FOna_9OSe0mYpjkhxp3E2QSmFRFJiJS_g8DzbgGxVIQ06ji0nmZ1x9utWn0Y81',
+              'X-Requested-With': 'XMLHttpRequest',
           },
           data: ({
             ActionMode: "R",
@@ -795,6 +790,7 @@ angular.module('starter.controllers', ['starter.services'])
       $location.path('/login');
     }
   })
+  
   //장학 내역 조회
   .controller('scholarshipListCtrl', function($scope, $http, $location, $ionicLoading, $localstorage, $ionicPopup) {
     $ionicLoading.show();
@@ -841,6 +837,7 @@ angular.module('starter.controllers', ['starter.services'])
       $location.path('/login');
     }
   })
+
   //교내 제출용 성적증명서
   .controller('printCtrl', function($scope, $http, $location, $ionicLoading, $localstorage, $ionicPopup) {
     $ionicLoading.show();
@@ -887,6 +884,7 @@ angular.module('starter.controllers', ['starter.services'])
       $location.path('/login');
     }
   })
+
   //공지사항
   .controller('noticesCtrl', function($scope, $http, $location, $ionicLoading, $localstorage) {
     if ($localstorage.getObject('cookie')) {
@@ -922,6 +920,7 @@ angular.module('starter.controllers', ['starter.services'])
       $location.path('/login');
     }
   })
+
   // 학사 일정 조회
   .controller('calendarCtrl', function($scope, $http, $location, $ionicLoading, $localstorage, $ionicPopup) {
     var date = new Date();
@@ -1003,6 +1002,7 @@ angular.module('starter.controllers', ['starter.services'])
       $location.path('/login');
     }
   })
+
   //상담 이력 조회
   .controller('consultingCtrl', function($scope, $http, $location, $ionicLoading, $localstorage, $ionicPopup) {
     $ionicLoading.show();

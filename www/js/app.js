@@ -86,16 +86,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           }
         }
       })
-      //학식 메뉴 조회
-      .state('app.food', {
-        url: '/food',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/myPage/food.html',
-            //controller: 'foodCtrl'
-          }
-        }
-      })
       //나의 상담 이력 조회
       .state('app.consulting', {
         url: '/consulting',
