@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
+angular.module('starter', ['ionic', 'starter.services'])
 
   .run(function($ionicPlatform, $ionicPopup) {
     $ionicPlatform.ready(function() {
@@ -13,7 +13,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       if (window.cordova && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         cordova.plugins.Keyboard.disableScroll(true);
-
       }
       if (window.StatusBar) {
         // org.apache.cordova.statusbar required
