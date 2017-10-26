@@ -157,16 +157,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           }
         }
       })
-      // 테스트 페이지
-      .state('app.test', {
-        url: '/test',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/class/syllabus/test.html',
-            //controller: 'testCtrl'
-          }
-        }
-      })
       /////////////////////////////////////////////////////////////////////////////////////////////////////
       //수강 관리
       .state('app.classRegister', {

@@ -533,14 +533,14 @@ angular.module('starter.controllers', ['starter.services'])
           method: 'post',
           //url: 'http://sam.skhu.ac.kr/SSE/SSEA1/SSEA102_Get강의계획서',
           //url: 'http://sam.skhu.ac.kr/SSE/SSEA1/SSEA102_Get%EA%B0%95%EC%9D%98%EA%B3%84%ED%9A%8D%EC%84%9C',
-          url : 'http://sam.skhu.ac.kr/SSE/SSEA1/SSEA102_Get%EA%B0%95%EC%9D%98%EA%B3%84%ED%9A%8D%EC%84%9C',
+          url: 'http://sam.skhu.ac.kr/SSE/SSEA1/SSEA102_Get%EA%B0%95%EC%9D%98%EA%B3%84%ED%9A%8D%EC%84%9C',
           headers: {
-              'Accept': 'application/json, text/plain, */*',
-              'Accept-Language': 'ko',
-              'Cache-Control': 'no-cache',
-              'Content-Type': 'application/json; charset=utf-8',
-              'RequestVerificationToken': 'IShIqEhpBtsiW5g8I6n3qQ-2BSeo171xv-p5CYNWuFEMD_KpW2TZR014GmZhvim34SgMMQ4cSG4RHqSKTGMuMlcfLTx6Jbbgg9TEfN7UiFc1:z1T52Z4_toK5XzGHczlmirws8bxruktnVQbcnEFG9ycbk_FOna_9OSe0mYpjkhxp3E2QSmFRFJiJS_g8DzbgGxVIQ06ji0nmZ1x9utWn0Y81',
-              'X-Requested-With': 'XMLHttpRequest',
+            'Accept': 'application/json, text/plain, */*',
+            'Accept-Language': 'ko',
+            'Cache-Control': 'no-cache',
+            'Content-Type': 'application/json; charset=utf-8',
+            'RequestVerificationToken': 'IShIqEhpBtsiW5g8I6n3qQ-2BSeo171xv-p5CYNWuFEMD_KpW2TZR014GmZhvim34SgMMQ4cSG4RHqSKTGMuMlcfLTx6Jbbgg9TEfN7UiFc1:z1T52Z4_toK5XzGHczlmirws8bxruktnVQbcnEFG9ycbk_FOna_9OSe0mYpjkhxp3E2QSmFRFJiJS_g8DzbgGxVIQ06ji0nmZ1x9utWn0Y81',
+            'X-Requested-With': 'XMLHttpRequest',
           },
           data: ({
             ActionMode: "R",
@@ -790,7 +790,7 @@ angular.module('starter.controllers', ['starter.services'])
       $location.path('/login');
     }
   })
-  
+
   //장학 내역 조회
   .controller('scholarshipListCtrl', function($scope, $http, $location, $ionicLoading, $localstorage, $ionicPopup) {
     $ionicLoading.show();
@@ -930,7 +930,6 @@ angular.module('starter.controllers', ['starter.services'])
     if ($localstorage.getObject('cookie')) {
       $http({
           method: 'post',
-          //url: 'http://c.youngbin.xyz/life/schedules',
           url: 'https://c.youngbin.xyz/foressst/life/schedules',
           headers: {
             'Content-Type': 'application/json'
@@ -983,7 +982,11 @@ angular.module('starter.controllers', ['starter.services'])
           $ionicLoading.hide();
           $localstorage.setObject('calendar3', data);
           $scope.calendar3 = $localstorage.getObject('calendar3').calendar;
-          $scope.month3 = (month + 2) % 12;
+          if ((month + 2) % 12 == 0) {
+            $scope.month3 = 12;
+          } else {
+            $scope.month3 = (month + 2) % 12;
+          }
         })
         .error(function(data, status, headers, config) {
           $ionicLoading.hide();
