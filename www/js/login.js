@@ -28,6 +28,11 @@ angular.module('starter')
             $location.path('/app/myPage');
           }
         });
+    }else {
+        var alertPopup = $ionicPopup.alert({
+          title: '공지사항',
+          template: '2018년도 신입생은 종합정보시스템의 계정을 발급받으신 후 사용하실수 있습니다.'
+        });
     }
 
     $scope.login = function(user) {

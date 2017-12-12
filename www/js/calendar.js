@@ -4,8 +4,26 @@ angular.module('starter')
   // 학사 일정 조회
   .controller('calendarCtrl', function($scope, $http, $location, $ionicLoading, $localstorage, $ionicPopup) {
     var date = new Date();
-    var month = date.getMonth() + 1;
-    var year = date.getFullYear();
+    var month1 = date.getMonth() + 1;
+    var year1 = date.getFullYear();
+    var month2 = month1 + 1;
+    var year2 = date.getFullYear();
+    var month3 = month2 + 1;
+    var year3 = date.getFullYear();
+    //현재 11월일 경우
+    if(month1 == 11) {
+        month2 = 12;
+        month3 = 1;
+        year3 = year3 + 1;
+    }
+    //현재 12월일 경우
+    else if(month1 == 12) {
+        month2 = 1;
+        year2 = year2 + 1;
+        month3 = 2;
+        year3 = year3 + 1;
+    }
+
     $ionicLoading.show();
     if ($localstorage.getObject('cookie')) {
       $http({
@@ -15,8 +33,8 @@ angular.module('starter')
             'Content-Type': 'application/json'
           },
           data: ({
-            year: year,
-            month: month % 12,
+            year: year1,
+            month: month1,
             cookie: $localstorage.getObject('cookie')
           })
         })
@@ -24,18 +42,17 @@ angular.module('starter')
           $ionicLoading.hide();
           $localstorage.setObject('calendar1', data);
           $scope.calendar1 = $localstorage.getObject('calendar1').calendar;
-          $scope.month1 = month % 12;
+          $scope.month1 = month1;
         });
       $http({
           method: 'post',
-          //url: 'http://c.youngbin.xyz/life/schedules',
           url: 'https://c.youngbin.xyz/foressst/life/schedules',
           headers: {
             'Content-Type': 'application/json'
           },
           data: ({
-            year: year,
-            month: (month + 1) % 12,
+            year: year2,
+            month: month2,
             cookie: $localstorage.getObject('cookie')
           })
         })
@@ -43,18 +60,17 @@ angular.module('starter')
           $ionicLoading.hide();
           $localstorage.setObject('calendar2', data);
           $scope.calendar2 = $localstorage.getObject('calendar2').calendar;
-          $scope.month2 = (month + 1) % 12;
+          $scope.month2 = month2;
         });
       $http({
           method: 'post',
-          //url: 'http://c.youngbin.xyz/life/schedules',
           url: 'https://c.youngbin.xyz/foressst/life/schedules',
           headers: {
             'Content-Type': 'application/json'
           },
           data: ({
-            year: year,
-            month: (month + 2) % 12,
+            year: year3,
+            month: month3,
             cookie: $localstorage.getObject('cookie')
           })
         })
@@ -62,11 +78,7 @@ angular.module('starter')
           $ionicLoading.hide();
           $localstorage.setObject('calendar3', data);
           $scope.calendar3 = $localstorage.getObject('calendar3').calendar;
-          if ((month + 2) % 12 == 0) {
-            $scope.month3 = 12;
-          } else {
-            $scope.month3 = (month + 2) % 12;
-          }
+          $scope.month3 = month3;
         })
         .error(function(data, status, headers, config) {
           $ionicLoading.hide();

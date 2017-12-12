@@ -8,6 +8,14 @@ angular.module('starter')
   if ($localstorage.getObject('cookie')) {
     $scope.syllabus = function(data) {
       $ionicLoading.show();
+      if(typeof(data.keyword) == 'undefined') {
+          $ionicLoading.hide();
+          var alertPopup = $ionicPopup.alert({
+            title: 'Warning Message',
+            template: '구분을 선택해 주세요.'
+          });
+          return false;
+      }
       if (typeof(data) == 'undefined') {
         $ionicLoading.hide();
         var alertPopup = $ionicPopup.alert({
