@@ -680,6 +680,15 @@ angular.module('starter', ['ionic', 'starter.services'])
           }
         }
       })
+      .state('app.test', {
+        url: '/test',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/test.html',
+            //controller: 'tel1Ctrl'
+          }
+        }
+      })
       /////////////////////////////////////////////////////////////////////////////////////////////////////
       //로그 아웃
       .state('app.logout', {

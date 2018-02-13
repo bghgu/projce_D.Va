@@ -6,6 +6,7 @@ angular.module('starter')
     //console.log($localstorage.getObject('syllabus_3').DAT[$localstorage.get('order')]);
     if ($localstorage.getObject('syllabus_3').DAT[$localstorage.get('order')]) {
       $ionicLoading.show();
+      let RequestVerificationToken = "Y9xdageJTkSr-5Ye6IqGsTz1LnQr-J2ES9bEUglEwPSanFkWpAvzUwvm755GkYjlOGaRIVBPmwMIFzyp7DTclQAMKahwGFfyRiuYEJfv3xk1:fxkupxHOHPpjkl8agQcvfhQdVwG2MC1wT6DemcdaSUeqJFSD803fxTylFy7sEZ-KKZwDmZJV2dADb8hv_K-q8EPoWNKBFeu4HXahcdpsBVY1";
       //////////////////////
       $http({
           method: 'post',
@@ -17,7 +18,7 @@ angular.module('starter')
             'Accept-Language': 'ko',
             'Cache-Control': 'no-cache',
             'Content-Type': 'application/json; charset=utf-8',
-            'RequestVerificationToken': 'IShIqEhpBtsiW5g8I6n3qQ-2BSeo171xv-p5CYNWuFEMD_KpW2TZR014GmZhvim34SgMMQ4cSG4RHqSKTGMuMlcfLTx6Jbbgg9TEfN7UiFc1:z1T52Z4_toK5XzGHczlmirws8bxruktnVQbcnEFG9ycbk_FOna_9OSe0mYpjkhxp3E2QSmFRFJiJS_g8DzbgGxVIQ06ji0nmZ1x9utWn0Y81',
+            'RequestVerificationToken': RequestVerificationToken,
             'X-Requested-With': 'XMLHttpRequest',
           },
           data: ({
