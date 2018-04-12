@@ -18,6 +18,7 @@ angular.module('starter')
           })
         })
         .success(function(data) {
+          console.log(data);
           if (data.length == 4) {
             $ionicLoading.hide();
             $ionicPopup.alert({
