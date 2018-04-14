@@ -1,6 +1,6 @@
-# project_foressst
+# .project_foressst
 
-![logo.png](D:\2016 project\projce_D.Va\image\logo.png)
+![logo.png](.\image\logo.png)
 
 성공회대학교 종합정보시스템 하이브리드 앱
 
@@ -10,17 +10,17 @@ IONIC frameWork1와 Angular.js 1을 사용한 하이브리드 앱 개발 프로�
 
 맡은 역할 : PM, 프론트 엔드 개발, 문서 작성, 발표, 유지 보수
 
-사용 기술 : 
+사용 기술 : IONCI framework1, Angular.js1
 
 ###구성
 
-![1.jpg](D:\2016 project\projce_D.Va\image\1.jpg)
+![1.jpg](.\image\1.jpg)
 
 * 종합 정보 시스템을 크롤링 하는 서버와, 이와 api 통신 하는 하이브리드 앱 으로 구성
 
-![2.jpg](D:\2016 project\projce_D.Va\image\2.jpg)
+![2.jpg](.\image\2.jpg)
 
-![3.jpg](D:\2016 project\projce_D.Va\image\4.jpg)
+![3.jpg](.\image\4.jpg)
 
 * 크롤링 서버는 앱으로 부터 데이터을 받아들여, forest 웹을 대신 검색해 준다.
 * 크롤링 서버는 검색 결과를 크롤링해 파싱한 데이터를 json으로 가공해 앱으로 전달한다.
