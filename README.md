@@ -116,7 +116,7 @@ IONIC frameWork1와 Angular.js 1을 사용한 하이브리드 앱 개발 프로�
 * **배다슬** - [bghgu](https://github.com/bghgu)
 
 
-[기여자 목록](https://github.com/bghgu/project/contributors)을 확인하여 이 프로젝트에 참가하신 분들을 보실 수 있습니다.
+[기여자 목록](https://github.com/bghgu/project_foressst/graphs/contributors)을 확인하여 이 프로젝트에 참가하신 분들을 보실 수 있습니다.
 
 ## 감사 인사
 
