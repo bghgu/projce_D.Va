@@ -10,6 +10,8 @@ IONIC frameWork1와 Angular.js 1을 사용한 하이브리드 앱 개발 프로�
 
 맡은 역할 : PM, 프론트 엔드 개발, 문서 작성, 발표, 유지 보수
 
+[foressst_작품제안서](https://github.com/bghgu/project_foressst/blob/master/foressst_%EC%9E%91%ED%92%88%EC%A0%9C%EC%95%88%EC%84%9C.pdf) - 작품 제안서
+
 사용 기술 : IONCI framework1, Angular.js1
 
 ## 구성
