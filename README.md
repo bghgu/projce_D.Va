@@ -12,13 +12,13 @@ IONIC frameWork1와 Angular.js 1을 사용한 하이브리드 앱 개발 프로�
 
 사용 기술 : IONCI framework1, Angular.js1
 
-### 구성
+## 구성
 
-![1.jpg](./image/1.jpg)
+![1.jpg](https://github.com/bghgu/project_foressst/blob/master/image/1.jpg)
 
 * 종합 정보 시스템을 크롤링 하는 서버와, 이와 api 통신 하는 하이브리드 앱 으로 구성
 
-![2.jpg](./image/2.jpg)
+![2.jpg](https://github.com/bghgu/project_foressst/blob/master/image/2.jpg)
 
 ![3.jpg](./image/4.jpg)
 
