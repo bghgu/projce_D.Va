@@ -2,7 +2,15 @@
 
 ![logo.png](https://github.com/bghgu/project_foressst/blob/master/image/logo.png)
 
-성공회대학교 종합정보시스템 하이브리드 앱
+•구글 플레이 스토어
+
+•[https://play.google.com/store/apps/details?id=com.ionicframework.foressst634249&hl=ko](https://play.google.com/store/apps/details?id=com.ionicframework.foressst634249&hl=koios)
+
+•ios 앱 스토어
+
+•<https://itunes.apple.com/us/app/foressst/id1171387985?l=ko&ls=1&mt=8>
+
+**성공회대학교 종합정보시스템 하이브리드 앱**
 
 IONIC frameWork1와 Angular.js 1을 사용한 하이브리드 앱 개발 프로젝트
 
@@ -26,6 +34,26 @@ IONIC frameWork1와 Angular.js 1을 사용한 하이브리드 앱 개발 프로�
 
 * 크롤링 서버는 앱으로 부터 데이터을 받아들여, forest 웹을 대신 검색해 준다.
 * 크롤링 서버는 검색 결과를 크롤링해 파싱한 데이터를 json으로 가공해 앱으로 전달한다.
+
+## 기능
+
+* 현재 이수 학점 조회
+* 나의 수업 출결 현황
+* 나의 상담 이력 조회
+* 학사 일정 조회
+* 개인 시간표 조회
+* 구 강의계획서 조회
+* 신 강의계획서 조회
+* 학과별 개설 과목 조회
+* 학점 세이브 조회
+* 성적 조회
+* 장학 내역 조회
+* 학과별 교과 과정 
+* 기타 과정 안내
+* 졸업 이수 학점 안내
+* 학과별 졸업 요건 안내
+* 교내 전화
+* 교수님 전화, 문자, 이메일 연결
 
 ## 실행 방법
 
