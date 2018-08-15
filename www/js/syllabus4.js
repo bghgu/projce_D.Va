@@ -6,7 +6,7 @@ angular.module('starter')
     //console.log($localstorage.getObject('syllabus_3').DAT[$localstorage.get('order')]);
     if ($localstorage.getObject('syllabus_3').DAT[$localstorage.get('order')]) {
       $ionicLoading.show();
-      let RequestVerificationToken = "tRPFzcEpugGC1bCoyXdIKy5FUQz365SLwwhHLmX30Rgh7PiGigHAGyB01eCS2OJDZ6e3W-4soGrys5JfsRuNJSPKr-N8M8mWai4YYYXcJoo1:ZwIjI6zBovx13rko5MfdGYAN6PC3dA-Qv47JAd94QMLTH4s9sfX8cEK2OyFPHKvCMr5pFPlflqMaSJSIQwXWOQeYCEdMq8pFdawXVO9n4C81";
+      let RequestVerificationToken = "NXi6vUCuWCGVCMVwk7Fx3d46-DZJp9iQcnonZp7vZ7XLSxe-VMI2YHdY4IJgt13ZIPKr584gGKgN1teK7vejIZ2ig-VaBrZQUjDHGyKVb981:miTODDf0AwEFS9tUQoyUlVh74v6xQMfahVwkY0k1xjjIi6_bn7S--DEUYQFdSqNagTUSf9moa4yXN5mfzTZ7gxDmpAnozsbJdWjyDPkJfb01";
       //////////////////////
       $http({
           method: 'post',
